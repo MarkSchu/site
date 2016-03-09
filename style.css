@@ -1,5 +1,6 @@
 body {
 	background: white;
+	font-family: "Helvetica Neue"
 }
 
 a {
@@ -8,13 +9,13 @@ a {
 }
 
 a:hover {
-	color: red;
+	color: #E80000;
 	text-decoration: none;
 }
 
 .wrapper {
 	width: 50%;
-	margin: 300px auto;
+	margin: 25% 25%;
 }
 
 .name {
@@ -26,9 +27,10 @@ a:hover {
 
 .email {
 	color : black;
-	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	/*font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;*/
+	font-family: monospace;
 	font-weight: 100;
-	margin-top: 7px;
+	margin-top: 200px;
 	margin-left: 25px;
 }
 
@@ -39,6 +41,10 @@ a:hover {
 	font-size: 25px;
 	margin-top: 7px;
 	margin-left: 25px;
+}
+
+p {
+	font-size: 12px;
 }
 
 /*top, right, bottom, left*/
