@@ -1,0 +1,16 @@
+{
+    "name": "markschu.github.io",
+    "version": "1.0.0",
+    "description": "My personal website",
+    "main": "app.js",
+    "scripts": {
+        "build": "node ./scripts/build.js"
+    },
+    "author": "Mark Schumaker",
+    "license": "ISC",
+    "dependencies": {
+        "markdown-it": "9.1.0",
+        "prismjs": "1.17.1",
+        "highlightjs": "9.12.0"
+    }
+}
