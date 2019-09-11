@@ -36,7 +36,7 @@ const addBaseHtml = (articleHtml, postData) => {
 </head>
 <body>
     <div class="container article">
-        <header>💾 Code Tutorials for Beginners</header>
+        <header><a href="/code-tutorials.html">💾 Code Tutorials for Beginners</a></header>
         <h1 class="title">${postData.title}</h1>
         <author class="subtext">by Mark Schumaker</author>
         ${articleHtml}
