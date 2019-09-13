@@ -4,7 +4,6 @@ const markdownIt = require('markdown-it')({
     html: true,
 });
 
-
 const posts = [];
 
 const getPostData = (metadata, name) => {
