@@ -4,6 +4,7 @@ const markdownIt = require('markdown-it')({
     html: true,
 });
 
+
 const posts = [];
 
 const getPostData = (metadata, name) => {
@@ -31,8 +32,8 @@ const addBaseHtml = (articleHtml, postData) => {
     <title>Mark Schumaker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../style.css">
-    <link href="../node_modules/prismjs/themes/prism-okaidia.css" rel="stylesheet" />
-    <script src="../node_modules/prismjs/prism.js"></script>
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
 </head>
 <body>
     <div class="container article">
