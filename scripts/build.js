@@ -4,25 +4,7 @@ const markdownIt = require('markdown-it')({
     html: true,
 });
 
-const posts = [];
-
-const getPostData = (metadata, name) => {
-    let lines = metadata.split('\n');
-    return {
-        title: lines[0],
-        url: `code-tutorials/${name.replace('.md', '.html')}`
-    }
-}
-
-const splitMarkdownAndData = (file, name) => {
-    let [metadata, markdown] = file.split('---');
-    return {
-        markdown,
-        postData: getPostData(metadata, name)
-    }
-}
-
-const addBaseHtml = (articleHtml, postData) => {
+const addBaseHtml = (articleHtml, articleDataObj, headerLink) => {
     return (`
 <!DOCTYPE html>
 <html>
@@ -37,11 +19,11 @@ const addBaseHtml = (articleHtml, postData) => {
 <body>
     <div class="container article">
         <header>
-            <a href="/code-tutorials.html">💾 Code Tutorials for Beginners</a>
+            ${headerLink}
             &nbsp;
             <a href="/">🌮 Mark Schumaker</a>
         </header>
-        <h1 class="title">${postData.title}</h1>
+        <h1 class="title">${articleDataObj.title}</h1>
         <author class="subtext">by Mark Schumaker</author>
         ${articleHtml}
         <footer>by Mark with ☕</footer>
@@ -50,24 +32,46 @@ const addBaseHtml = (articleHtml, postData) => {
 </html>`);
 }
 
-const createFile = (html, name) => {
-    const htmlName = name.replace('.md', '.html');
-    fs.writeFileSync(`code-tutorials/${htmlName}`, html);
+const articleDataToObject = (name, articleData, articleFolder) => {
+    let lines = articleData.split('\n');
+    let htmlName = name.replace('.md', '.html');
+    return {
+        title: lines[0],
+        url: `${articleFolder}/${htmlName}`,
+        publish: lines[1] === 'publish'
+    }
 }
 
-const buildSingle = (name) => {
-    let file = fs.readFileSync(`code-tutorials-drafts/${name}`, 'utf8');
-    let {markdown, postData} = splitMarkdownAndData(file, name);
-    let articleHtml = markdownIt.render(markdown);
-    let pageHtml = addBaseHtml(articleHtml, postData);
-    posts.push(postData);
-    createFile(pageHtml, name);
+const buildAll = (draftsFolder, jsFile, articleVariable, articleFolder, headerLink) => {
+    let articles = [];
+    let drafts = fs.readdirSync(draftsFolder);
+    drafts.forEach((draft) => {
+        let file = fs.readFileSync(`${draftsFolder}/${draft}`, 'utf8');
+        let [articleData, markdown] = file.split('---');
+        let articleDataObj = articleDataToObject(draft, articleData, articleFolder);
+        if (!articleDataObj.publish)
+            return;
+        let articleHtml = markdownIt.render(markdown);
+        let pageHtml = addBaseHtml(articleHtml, articleDataObj, headerLink);
+        articles.push(articleDataObj);
+        fs.writeFileSync(articleDataObj.url, pageHtml);
+    });
+    let articlesJS = `const ${articleVariable} = ${JSON.stringify(articles)}`;
+    fs.writeFileSync(jsFile, articlesJS);
 }
 
-const buildAll = () => {
-    let drafts = fs.readdirSync('code-tutorials-drafts');
-    drafts.forEach(buildSingle);
-    fs.writeFileSync('data/code-tutorials.js', 'var codeTutorials = ' + JSON.stringify(posts));
-}
+buildAll(
+    'code-tutorials-drafts',
+    'data/code-tutorials.js',
+    'codeTutorials',
+    'code-tutorials',
+    '<a href="/code-tutorials.html">💾 Code Tutorials for Beginners </a>'
+);
 
-buildAll();
+buildAll(
+    'learn-in-public-drafts',
+    'data/learn-in-public.js',
+    'learnInPublicArticles',
+    'learn-in-public',
+    '<a href="/learn-in-public.html">📝 Learn In Public</a>'
+)

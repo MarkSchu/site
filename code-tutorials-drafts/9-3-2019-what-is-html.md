@@ -1,4 +1,5 @@
 What is HTML?
+publish
 ---
 The original purpose of the internet was to share text documents like articles. When you give a web browser a file with text, it displays the text. And that means that you can send someone a file and they can use their browser to read it.
 

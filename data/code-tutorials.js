@@ -1,1 +1,1 @@
-var codeTutorials = [{"title":"Why Do Frontend Frameworks Exist?","url":"code-tutorials/9-12-2019-why-do-frontend-frameworks-exist.html"},{"title":"What is HTML?","url":"code-tutorials/9-3-2019-what-is-html.html"}]
+const codeTutorials = [{"title":"Why Do Frontend Frameworks Exist?","url":"code-tutorials/9-12-2019-why-do-frontend-frameworks-exist.html","publish":true},{"title":"What is HTML?","url":"code-tutorials/9-3-2019-what-is-html.html","publish":true}]

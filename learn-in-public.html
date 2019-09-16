@@ -14,8 +14,28 @@
             <p class="subtext">📝 The world is full of interesting, but confusing stuff.</p>
             <p class="elaboration">Here is where I try to learn in public.<p>
             <div class="separator"> --- </div>
+            <div class="article-list">
+
+            </div>
         </div>
         <footer>by Mark with ☕</footer>
     </div>
+    <script src="data/learn-in-public.js" ></script>
+    <script>
+        let articleList = document.querySelector('.article-list');
+
+        let addArticle = (tutorialData) => {
+            let div = document.createElement('div');
+            let a = document.createElement('a');
+            a.href = tutorialData.url;
+            a.textContent = tutorialData.title;
+            div.appendChild(a);
+            div.className = 'menu-option';
+            articleList.appendChild(div);
+        }
+        console.log(learnInPublicArticles);
+        learnInPublicArticles.forEach((tutorial) => addArticle(tutorial));
+
+    </script>
 </body>
 </html>

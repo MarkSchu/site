@@ -30,12 +30,14 @@ a:hover {
 header {
     padding: 16px 0;
     margin-bottom: 104px;
+    font-size: 20px;
 }
 
 footer {
     padding: 16px 0;
     margin-top: 104px;
     text-align: right;
+    font-size: 20px;
 }
 
 .title {
@@ -69,8 +71,9 @@ footer {
     margin-bottom: 120px;
 }
 
-.article p {
-    font-size: 18px;
+.article p,
+.article li {
+    font-size: 20px;
     line-height: 1.7;
 }
 

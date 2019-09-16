@@ -1,4 +1,5 @@
 Why Do Frontend Frameworks Exist?
+publish
 ---
 When I first got into web development, I didn't understand why frontend frameworks like React, Vue, and Angular existed. Here, I'm briefly going to explain why.
 
@@ -91,4 +92,4 @@ become hard to read and hard to change.
 In short, the purpose of frameworks is to make development easier by automatically
 handling updates on state change. Instead of explicitly telling the app which
 parts to update like we do with `showNumberOfTacos()` and `showTotalPrice()` above,
-frameworks handle those updates so that the developer doesn't need to. 
+frameworks handle those updates so that the developer doesn't need to.
