@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <header>
+            <a href="/code-tutorials.html">💾 Code Tutorials for Beginners </a>
+            &nbsp;
+            <a href="/">🌮 Mark Schumaker</a>
+        </header>
+        <h1 class="title">What are Web Browser Cookies?</h1>
+        <author class="subtext">by Mark Schumaker</author>
+        <p>A web browser cookie is a way to store data that is associated with a website on a web browser. The best way to understand this is to understand a problem that cookies solve.</p>
+<p>Imagine that you want to create a web site or web app that does the following. When a browser loads the web page for the first time, the web page shows a message like this:</p>
+<img src="../images/cookie1.png" />
+<p>On every subsequent visit, however, the web page shows a different message:</p>
+<img src="../images/cookie2.png" />
+<p>To solve this problem, you need to store the information that the browser visited the web page. When the web page loads, it checks and shows the right message.</p>
+<p>How do you solve this problem?</p>
+<p>There are a few solutions and browser cookies are one of them.</p>
+<p>A cookie is a way to store data that is associated with a particular website on a web browser. Cookies are key-value pairs like <code>favoriteNumber:42</code> and <code>enjoysTacos:true</code>. A programmer can create, change, and delete cookies. Here is a way to use cookies to solve the problem above.</p>
+<p>When the page loads, use JavaScript to look up the website's cookies and look for the <code>hasVisited</code> cookie. If there is no such cookie, it means that the web browser has never been to the site so show the message in the first screenshot and then use JavaScript to create a cookie called <code>hasVisited</code> that is set to <code>true</code>. If there is such a cookie, then show the message in the second screenshot. Here is the code.</p>
+<p>The first file sets up a very, very simple web server to serve our html and javascript. This is necessary because cookies do not work when browsers access files via the <code>file</code> protocol (i.e. <code>file:///Users/markschumaker/...</code>).</p>
+<p><code>server.js</code></p>
+<pre><code class="language-javascript">const http = require('http');
+const fs = require('fs');
+const port = 8080;
+
+const handleRequest = (request, response) =&gt; {
+    let indexFile = fs.readFileSync('./index.html');
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.end(indexFile);
+}
+
+const server = http.createServer(handleRequest);
+
+server.listen(port, () =&gt; {
+    console.log('Go to http://localhost:8080/ with your browser.');
+});
+</code></pre>
+<p>You can run this by typing in <code>node server.js</code> in your terminal while in the directory that contains the file.</p>
+<p>The next file contains the code for the actual web page. All the cookie stuff happens in the <code>&lt;script&gt;</code> tag.</p>
+<p><code>index.html</code></p>
+<pre><code class="language-javascript">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Cookie!&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;div id=&quot;welcome-back&quot; hidden&gt;
+        &lt;h2&gt;🙌 Welcome back!&lt;/h2&gt;
+        &lt;p&gt;This browser has opened this page before!&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;welcome&quot; hidden&gt;
+        &lt;h2&gt;👋 Hello!&lt;/h2&gt;
+        &lt;p&gt;This is the first time that this particular browser opened this page!
+    &lt;/div&gt;
+
+    &lt;script&gt;
+
+        if (document.cookie.includes('hasVisited')) {
+            // show the &quot;Welcome Back!&quot; message
+            document.querySelector('#welcome-back').hidden = false;
+        } else {
+            // set cookie
+            document.cookie = 'hasVisited=true';
+            // show &quot;This is the first time&quot; message
+            document.querySelector('#welcome').hidden = false;
+        }
+
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>When you hit this page for the first time in a web browser, you'll see the &quot;👋 Hello!&quot; message. Every other time, you'll see the &quot;🙌 Welcome back!&quot; message. Go ahead and try it.</p>
+<p>It is really important to know that cookies are browser specific. If you load the page multiple times in Chrome and then open the page in Firefox, you'll see the &quot;👋 Hello!&quot; message because your copy of Firefox does not share its cookies with your copy of Chrome. If you load the page multiple times in Chrome and then open Chrome on a different computer, you'll see the &quot;👋 Hello!&quot; message.</p>
+<p>It is also important to emphasize that cookies are associated with particular websites. The cookies for <code>www.google.com</code> are totally different from the cookies for <code>www.yahoo.com</code>.</p>
+<p>That's pretty much it. Cookies are key-value pairs that are stored in particular web browsers and associated with websites. As a programmer, you can use them to store data on someone's copy of a web browser and then change or delete them to modify the behavior of a website.</p>
+
+        <footer>by Mark with ☕</footer>
+    </div>
+</body>
+</html>
