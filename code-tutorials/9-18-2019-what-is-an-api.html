@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <header>
+            <a href="/code-tutorials.html">💾 Code Tutorials for Beginners </a>
+            &nbsp;
+            <a href="/">🌮 Mark Schumaker</a>
+        </header>
+        <h1 class="title">What is an API?</h1>
+        <author class="subtext">by Mark Schumaker</author>
+        <p>I remember being confused by the use of the term &quot;API&quot; (i.e. application programming interface) when I started in web development. The reason, I think, is that the term is used in two related, but different ways. First, it is used to mean a set of HTTP method-url pairs that you can send HTTP requests to. Second, it is used to mean the methods and properties of a module, class, or class instance. I'll explain.</p>
+<p>In the first sense, an API is a set of urls with HTTP methods that you can make HTTP requests to. An example is the Fav Quotes API at https://favqs.com/api. It includes, for instance:</p>
+<pre><code class="language-text">GET https://favqs.com/api/qotd
+GET https://favqs.com/api/quotes
+GET https://favqs.com/api/quotes/:quote_id
+PUT https://favqs.com/api/quotes/:quote_id/fav
+PUT https://favqs.com/api/quotes/:quote_id/upvote
+</code></pre>
+<p>You can send an HTTP request to any of these pairs and get a response.</p>
+<p>For example, if you make a <code>GET</code> request to <code>https://favqs.com/api/qotd</code>, the API sends back a quote. You can try this by hitting <code>https://favqs.com/api/qotd</code> in the browser or by making an AJAX request like this:</p>
+<pre><code class="language-javascript">var request = new XMLHttpRequest();
+request.open('GET', 'https://favqs.com/api/qotd', true);
+request.onload = function() {
+    if (this.status == 200) {
+        // Here is the quote of the day!
+        var response = this.response;
+    }
+};
+request.send();
+</code></pre>
+<p>(Other requests require something called an &quot;API token&quot;. I'll save that for another article).</p>
+<p>In the second sense, an API refers to the methods and properties on modules, classes, and class instances. Consider the JavaScript model <code>Math</code>. The <code>Math</code> module includes, for instance, the methods <code>Math.floor</code>, <code>Math.abs</code>, and <code>Math.log</code>, along with the properties <code>Math.PI</code> and <code>Math.E</code>. We say, therefore, that <code>floor</code>, <code>abs</code>, <code>log</code>, <code>PI</code>, and <code>E</code> are part of the API of the <code>Math</code> module.</p>
+<p>The same is true of class instances. If you create an array, for instance</p>
+<pre><code class="language-javascript">let myArray = [1, 2];
+</code></pre>
+<p>you'll find that the instance <code>myArray</code> has a number of methods like <code>myArray.push</code> and <code>myArray.pop</code> and the property <code>myArray.length</code>. We say that <code>push</code>, <code>pop</code>, and <code>length</code> are part of the API of the array instance.</p>
+
+        <footer>by Mark with ☕</footer>
+    </div>
+</body>
+</html>
