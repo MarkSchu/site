@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <header>
+            <a href="/learn-in-public.html">📝 Learn In Public</a>
+            &nbsp;
+            <a href="/">🌮 Mark Schumaker</a>
+        </header>
+        <h1 class="title">Describing Motion in Physics</h1>
+        <author class="subtext">by Mark Schumaker</author>
+        <p>The world described in &quot;<a href="/learn-in-public/9-19-2019-describing-position-in-physics.html">Describing Position in Physics</a>&quot; is interesting to look at but a little boring. Nothing about it ever changes.</p>
+<p>On way to make the world more interesting is to have the atoms move around.</p>
+<p>How do you describe this mathematically? Think about what movement is intuitively. Basically, an object moves when it changes position over time. At one moment it is here; and at another moment it is there; and at another moment it is over there.</p>
+<p>In other words: every moment of time is associated with the position of the object at that moment.</p>
+<style>
+    table td {
+        padding: 16px;
+    }
+</style>
+<table>
+    <tr>
+        <th>Time</th>
+        <th>Position</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>(7, 2)</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>(8, 2.5)</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>(9, 3)</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>(10, 3.5)</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>(11, 4)</td>
+    </tr>
+</table>
+<p>And that means that mathematically we're dealing with a function that maps moments of time to positions in space.</p>
+<pre><code class="language-text">positionAt : Time -&gt; Position
+</code></pre>
+<p>Using this function, you can find the position of the object at any given moment. For example, assuming that you're using seconds and meters to measure distance, <code>positionAt(10) = (10, 8)</code> means that at the <code>10 second</code> mark, the object is located at <code>(10 meters, 8 meters)</code>.</p>
+<p>That is all to say that we can use functions of the form <code>Time -&gt; Position</code> to describe the movement of each atom in the world mentioned above. Since each atom may move differently, each atom gets its own particular function that describes its movement.</p>
+<p>For example, suppose that the world only contains <code>3</code> atoms: <code>A</code>, <code>B</code>, and <code>C</code>. Let's give each atom a position function that describes its movement over time.</p>
+<pre><code class="language-text">atom A      positionA(t) = (t/2, 10)
+atom B      positionB(t) = (t/8, t^2/100)
+atom C      positionC(t) = (sin(t), cos(t))
+</code></pre>
+<p>The first function, <code>positionA</code>, describes the atom as moving to the right over time while maintaining its height at <code>10</code>.</p>
+<p>The second function, <code>positionB</code>, describes the atom as moving to the right slowly and moving up with increasing speed.</p>
+<p>The third function, <code>positionC</code> describes the atom as moving in a circle.</p>
+
+        <footer>by Mark with ☕</footer>
+    </div>
+</body>
+</html>

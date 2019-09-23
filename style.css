@@ -72,7 +72,9 @@ footer {
 }
 
 .article p,
-.article li {
+.article li,
+.article td,
+.article th {
     font-size: 20px;
     line-height: 1.7;
 }
