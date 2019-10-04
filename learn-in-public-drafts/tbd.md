@@ -1,1 +1,0 @@
-Assume that you have a very basic world. The world has two spatial dimensions, one time dimension, and contains atoms that have no size. Furthermore, assume that you know exactly how each atom moves over time. Assume, that is, that you possess, for each atom, a function that maps moments of time to positions in space; the position the atom occupies at a given moment.

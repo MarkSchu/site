@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+    }
+    .container {
+        width: 600px;
+        margin: auto;
+        margin-top: 100px;
+        height: 600px;
+    }
+    .textarea {
+        resize: none;
+        border: none;
+        font-family: monospace;
+        font-size: 16px;
+        color: #333;
+        display: block;
+        line-height: 1.75;
+        height: 100%;
+        width: 100%;
+    }
+    .textarea:focus {
+        outline: none;
+    }
+    button {
+        float: right;
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <textarea class="textarea" placeholder="Start here..."></textarea>
+    </div>
+    <button>Download</button>
+    <script>
+
+        const download = (filename, text) => {
+            let el = document.createElement('a');
+            let href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(text);
+            el.setAttribute('href', href);
+            el.setAttribute('download', filename);
+            el.style.display = 'none';
+            document.body.appendChild(el);
+            el.click();
+            document.body.removeChild(el);
+        }
+
+        const textarea = document.querySelector('.textarea');
+        textarea.contentEditable = true;
+
+        const button = document.querySelector('button');
+        button.addEventListener('click', (e) => {
+            download('foo2.txt', textarea.value);
+        });
+
+
+
+    </script>
+</body>
+</html>
