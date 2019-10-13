@@ -17,7 +17,7 @@ a:hover {
 }
 
 .container {
-    max-width: 800px;
+    max-width: 640px;
     margin-left: 128px;
 }
 
@@ -76,6 +76,10 @@ footer {
 .menu-option {
     font-size: 22px;
     margin-bottom: 16px;
+}
+
+.article title {
+
 }
 
 .article author {

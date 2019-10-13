@@ -23,8 +23,7 @@ const addBaseHtml = (articleHtml, articleDataObj, headerLink) => {
             &nbsp;
             <a href="/">🌮 Mark Schumaker</a>
         </header>
-        <h1 class="title">${articleDataObj.title}</h1>
-        <author class="subtext">by Mark Schumaker</author>
+        <h1 class="">${articleDataObj.title}</h1>
         ${articleHtml}
         <footer>by Mark with ☕</footer>
     </div>
