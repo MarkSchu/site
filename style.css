@@ -18,7 +18,7 @@ a:hover {
 
 .container {
     max-width: 640px;
-    margin-left: 128px;
+    margin: auto;
 }
 
 @media (max-width: 1000px) {
@@ -80,7 +80,7 @@ footer {
 
 .article h1 {
     font-size: 22px;
-    margin-bottom: 32px;
+    margin: 0;
 }
 
 .article author {
@@ -97,6 +97,7 @@ footer {
 }
 
 .article p {
+    margin-top: 0;
     margin-bottom: 32px;
 }
 
