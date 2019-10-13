@@ -78,8 +78,9 @@ footer {
     margin-bottom: 16px;
 }
 
-.article title {
-
+.article h1 {
+    font-size: 22px;
+    margin-bottom: 32px;
 }
 
 .article author {
@@ -93,6 +94,10 @@ footer {
 .article th {
     font-size: 20px;
     line-height: 1.7;
+}
+
+.article p {
+    margin-bottom: 32px;
 }
 
 .article img {
