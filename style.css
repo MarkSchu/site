@@ -17,6 +17,10 @@ header {
     margin-bottom: 60px;
 }
 
+header a {
+    text-decoration: none;
+}
+
 footer {
     margin-top: 60px;
     text-align: center;
