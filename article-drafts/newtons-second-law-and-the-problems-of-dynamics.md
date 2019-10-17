@@ -1,8 +1,9 @@
-Newton’s Second Law and the Problems of Dynamics
-publish
+publish=true
+date=10/13/2019
 ---
-Reading The Feynman Lectures on Physics<br>
-Volume 1, Chapter 9
+# Newton’s Second Law and the Problems of Dynamics
+## Reading The Feynman Lectures on Physics
+## Volume 1, Chapter 9
 
 Newton's Second Law of Dynamics says the following. The acceleration that an object undergoes while under the influence of a force is equal to the force divided by the object's mass.
 ```text

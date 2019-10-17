@@ -3,102 +3,49 @@ body {
     font-family: "Courier New";
 }
 
-h1 {
-    margin: 0;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    font-weight: 900;
-}
-
 .container {
-    max-width: 640px;
-    margin: auto;
+    padding: 60px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 621px) {
     .container {
-        margin: 0 32px;
+        padding: 32px;
     }
 }
 
 header {
-    padding: 16px 0;
-    margin-bottom: 104px;
-    font-size: 20px;
-}
-
-@media (max-width: 600px) {
-    header a {
-        display: block;
-    }
+    margin-bottom: 60px;
 }
 
 footer {
-    padding: 16px 0;
-    margin-top: 104px;
-    text-align: right;
-    font-size: 20px;
+    margin-top: 60px;
+    text-align: center;
 }
 
-.title {
-    font-size: 72px;
+.content {
+    max-width: 600px;
+    margin: auto;
 }
 
-@media (max-width: 600px) {
-    .title {
-        font-size: 48px;
-    }
-}
-
-.subtext {
-    font-size: 22px;
+li,
+p {
+    font-size: 18px;
     line-height: 1.7;
 }
 
-.elaboration {
-    font-size: 22px;
+.article h1,
+.article h2 {
+    font-size: 18px;
+    margin: 0;
     line-height: 1.7;
-}
-
-.separator {
-    font-size: 22px;
-    opacity: 0.25;
-    font-weight: 900;
-    margin-bottom: 16px;
-}
-
-.menu-option {
-    font-size: 22px;
-    margin-bottom: 16px;
 }
 
 .article h1 {
-    font-size: 22px;
-    margin: 0;
+    margin-top: 18px;
 }
 
-.article author {
-    display: block;
-    margin-bottom: 120px;
-}
-
-.article p,
-.article li,
-.article td,
-.article th {
-    font-size: 20px;
-    line-height: 1.7;
-}
-
-.article p {
-    margin-top: 0;
-    margin-bottom: 32px;
+.article h2 {
+    font-weight: normal;
 }
 
 .article img {

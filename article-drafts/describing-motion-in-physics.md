@@ -1,7 +1,9 @@
-Describing Motion in Physics
-publish
+publish=true
+date=9/23/2019
 ---
-The world described in "[Describing Position in Physics](/learn-in-public/9-19-2019-describing-position-in-physics.html)" is interesting to look at but a little boring. Nothing about it ever changes.
+# Describing Motion in Physics
+
+The world described in "[Describing Position in Physics](/articles/describing-position-in-physics.html)" is interesting to look at but a little boring. Nothing about it ever changes.
 
 On way to make the world more interesting is to have the atoms move around.
 

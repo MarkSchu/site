@@ -11,13 +11,14 @@
 </head>
 <body>
     <div class="container article">
-        <header>
-            <a href="/code-tutorials.html">💾 Code Tutorials for Beginners </a>
-            &nbsp;
-            <a href="/">🌮 Mark Schumaker</a>
-        </header>
-        <h1 class="">Why Do Frontend Frameworks Exist?</h1>
-        <p>When I first got into web development, I didn't understand why frontend frameworks like React, Vue, and Angular existed. Here, I'm briefly going to explain why.</p>
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>Why Do Frontend Frameworks Exist?</h1>
+<p>When I first got into web development, I didn't understand why frontend frameworks like React, Vue, and Angular existed. Here, I'm briefly going to explain why.</p>
 <p>JavaScript frameworks solve a particular problem having to do with displaying data that changes. (Many of them solve additional problems, but I'm not going to talk about those).</p>
 <p>Consider a web page that lets you order tacos. The web page shows the number of tacos that the user wants to order, has a button that adds a taco and a button that removes a taco, and shows the total cost of the order.</p>
 <img src="../images/taco-framework.png" />
@@ -99,7 +100,10 @@ handling updates on state change. Instead of explicitly telling the app which
 parts to update like we do with <code>showNumberOfTacos()</code> and <code>showTotalPrice()</code> above,
 frameworks handle those updates so that the developer doesn't need to.</p>
 
-        <footer>by Mark with ☕</footer>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
     </div>
 </body>
 </html>

@@ -1,6 +1,8 @@
-Why Do Frontend Frameworks Exist?
-publish
+publish=true
+date=9/12/2019
 ---
+# Why Do Frontend Frameworks Exist?
+
 When I first got into web development, I didn't understand why frontend frameworks like React, Vue, and Angular existed. Here, I'm briefly going to explain why.
 
 JavaScript frameworks solve a particular problem having to do with displaying data that changes. (Many of them solve additional problems, but I'm not going to talk about those).

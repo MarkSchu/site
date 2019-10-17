@@ -1,6 +1,8 @@
-What are Web Browser Cookies?
-publish
+publish=true
+date=9/17/2019
 ---
+# What are Web Browser Cookies?
+
 A web browser cookie is a way to store data that is associated with a website on a web browser. The best way to understand this is to understand a problem that cookies solve.
 
 Imagine that you want to create a web site or web app that does the following. When a browser loads the web page for the first time, the web page shows a message like this:

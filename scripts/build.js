@@ -4,6 +4,38 @@ const markdownIt = require('markdown-it')({
     html: true,
 });
 
+const readMetadata = (metadata) => {
+    let data = {};
+    let lines = metadata.split('\n');
+    lines.pop();
+    lines.forEach(line => {
+        let [key, value] = line.split('=');
+        data[key] = value;
+    });
+    return data;
+}
+
+const getTitle = (markdown) => {
+    let lines = markdown.split('\n');
+    let title = lines[1].replace('# ', '');
+    return title;
+}
+
+const getSubheadings = (markdown) => {
+    let subheadings = [];
+    let lines = markdown.split('\n');
+    lines.forEach(line => {
+        if (line.startsWith('## ')) {
+            let subheading = line.replace('## ', '');
+            if (subheading.includes('[')) {
+                subheading = subheading.match(/\[(.*)\]/)[1];
+            }
+            subheadings.push(subheading);
+        }
+    });
+    return subheadings;
+}
+
 const addBaseHtml = (articleHtml, articleDataObj, headerLink) => {
     return (`
 <!DOCTYPE html>
@@ -18,59 +50,40 @@ const addBaseHtml = (articleHtml, articleDataObj, headerLink) => {
 </head>
 <body>
     <div class="container article">
-        <header>
-            ${headerLink}
-            &nbsp;
-            <a href="/">🌮 Mark Schumaker</a>
-        </header>
-        <h1 class="">${articleDataObj.title}</h1>
-        ${articleHtml}
-        <footer>by Mark with ☕</footer>
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            ${articleHtml}
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
     </div>
 </body>
 </html>`);
 }
 
-const articleDataToObject = (name, articleData, articleFolder) => {
-    let lines = articleData.split('\n');
-    let htmlName = name.replace('.md', '.html');
-    return {
-        title: lines[0],
-        url: `${articleFolder}/${htmlName}`,
-        publish: lines[1] === 'publish'
-    }
-}
-
-const buildAll = (draftsFolder, jsFile, articleVariable, articleFolder, headerLink) => {
+const build = () => {
     let articles = [];
-    let drafts = fs.readdirSync(draftsFolder);
-    drafts.forEach((draft) => {
-        let file = fs.readFileSync(`${draftsFolder}/${draft}`, 'utf8');
-        let [articleData, markdown] = file.split('---');
-        let articleDataObj = articleDataToObject(draft, articleData, articleFolder);
-        if (!articleDataObj.publish)
-            return;
+    let drafts = fs.readdirSync('article-drafts');
+    drafts.forEach(title => {
+        let file = fs.readFileSync(`article-drafts/${title}`, 'utf8');
+        let path = `articles/${title}`.replace('.md', '.html');
+        let [metadata, markdown] = file.split('---');
+        let data = readMetadata(metadata);
+        data.title = getTitle(markdown);
+        data.subheadings = getSubheadings(markdown);
+        data.url = path;
         let articleHtml = markdownIt.render(markdown);
-        let pageHtml = addBaseHtml(articleHtml, articleDataObj, headerLink);
-        articles.push(articleDataObj);
-        fs.writeFileSync(articleDataObj.url, pageHtml);
+        let pageHtml = addBaseHtml(articleHtml);
+        fs.writeFileSync(path, pageHtml);
+        articles.push(data);
     });
-    let articlesJS = `const ${articleVariable} = ${JSON.stringify(articles)}`;
-    fs.writeFileSync(jsFile, articlesJS);
+    let articlesJS = `const articles = ${JSON.stringify(articles)}`;
+    fs.writeFileSync('data/articles.js', articlesJS);
 }
 
-buildAll(
-    'code-tutorials-drafts',
-    'data/code-tutorials.js',
-    'codeTutorials',
-    'code-tutorials',
-    '<a href="/code-tutorials.html">💾 Code Tutorials for Beginners </a>'
-);
-
-buildAll(
-    'learn-in-public-drafts',
-    'data/learn-in-public.js',
-    'learnInPublicArticles',
-    'learn-in-public',
-    '<a href="/learn-in-public.html">📝 Learn In Public</a>'
-)
+build();

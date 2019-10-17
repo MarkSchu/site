@@ -1,6 +1,8 @@
-Describing Position in Physics
-publish
+publish=true
+date=9/19/2019
 ---
+# Describing Position in Physics
+
 Imagine a world that is very simple. The world has two spatial dimensions - a horizontal dimension and a vertical dimension - and contains atoms with no size and no shape. Looking at this world is like looking at the stars in the night sky.
 
 <img src="../images/position1.png" />

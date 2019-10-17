@@ -11,13 +11,14 @@
 </head>
 <body>
     <div class="container article">
-        <header>
-            <a href="/code-tutorials.html">💾 Code Tutorials for Beginners </a>
-            &nbsp;
-            <a href="/">🌮 Mark Schumaker</a>
-        </header>
-        <h1 class="">What is an API?</h1>
-        <p>I remember being confused by the use of the term &quot;API&quot; (i.e. application programming interface) when I started in web development. The reason, I think, is that the term is used in two related, but different ways. First, it is used to mean a set of HTTP method-url pairs that you can send HTTP requests to. Second, it is used to mean the methods and properties of a module, class, or class instance. I'll explain.</p>
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>What is an API?</h1>
+<p>I remember being confused by the use of the term &quot;API&quot; (i.e. application programming interface) when I started in web development. The reason, I think, is that the term is used in two related, but different ways. First, it is used to mean a set of HTTP method-url pairs that you can send HTTP requests to. Second, it is used to mean the methods and properties of a module, class, or class instance. I'll explain.</p>
 <p>In the first sense, an API is a set of urls with HTTP methods that you can make HTTP requests to. An example is the Fav Quotes API at https://favqs.com/api. It includes, for instance:</p>
 <pre><code class="language-text">GET https://favqs.com/api/qotd
 GET https://favqs.com/api/quotes
@@ -44,7 +45,10 @@ request.send();
 </code></pre>
 <p>you'll find that the instance <code>myArray</code> has a number of methods like <code>myArray.push</code> and <code>myArray.pop</code> and the property <code>myArray.length</code>. We say that <code>push</code>, <code>pop</code>, and <code>length</code> are part of the API of the array instance.</p>
 
-        <footer>by Mark with ☕</footer>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
     </div>
 </body>
 </html>
