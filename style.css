@@ -57,3 +57,11 @@ p {
     display: block;
     margin: auto;
 }
+
+.article .thanks-button {
+    font-family: "Courier New";
+    font-size: 16px;
+    margin-top: 32px;
+    cursor: pointer;
+    display: none;
+}

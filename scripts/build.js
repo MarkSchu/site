@@ -36,7 +36,7 @@ const getSubheadings = (markdown) => {
     return subheadings;
 }
 
-const addBaseHtml = (articleHtml, articleDataObj, headerLink) => {
+const addBaseHtml = (articleHtml, data) => {
     return (`
 <!DOCTYPE html>
 <html>
@@ -57,11 +57,18 @@ const addBaseHtml = (articleHtml, articleDataObj, headerLink) => {
                 <a href="/about.html">👋</a>
             </header>
             ${articleHtml}
+            <div>
+                <button class="thanks-button">🙌 Thanks, this helped!</button>
+            </div>
             <footer>
                 <span>By Mark with ☕</span>
             </footer>
         </div>
     </div>
+    <script>
+        let article = ${JSON.stringify(data)};
+    </script>
+    <script src="/js/article.js"></script>
 </body>
 </html>`);
 }
@@ -78,7 +85,7 @@ const build = () => {
         data.subheadings = getSubheadings(markdown);
         data.url = path;
         let articleHtml = markdownIt.render(markdown);
-        let pageHtml = addBaseHtml(articleHtml);
+        let pageHtml = addBaseHtml(articleHtml, data);
         fs.writeFileSync(path, pageHtml);
         articles.push(data);
     });
