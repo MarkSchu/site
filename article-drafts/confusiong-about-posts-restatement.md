@@ -1,3 +1,4 @@
+publicId=0fJjNw5ZD
 publish=true
 date=10/18/2019
 ---
@@ -16,7 +17,7 @@ Despite what Post says, these seem like totally different problems.
 
 For one, the algorithms that solve the two problems have different type signatures. An algorithm that solves "Are strings X and Y equivalent?" has the type signature `String * String -> Yes/No`. An algorithm that solves "Is S a canonical system of type Thue?" has the type signature `System -> Yes/No`
 
-Second, the problem "Is string Y a member of the canonical system with primitive assertion X and such-and-such operations?" - mentioned by Post above - does seem like a problem that is equivalent to the problem of Thue. An algorithm that inputs a string X and a string Y and decides if Y is a member of the canonical system based on X would only decide correctly when X and Y are equivalent.
+Second, the problem "Is string Y a member of the canonical system with primitive assertion X and such-and-such operations?" - mentioned by Post above - *does* seem like a problem that is equivalent to the problem of Thue. An algorithm that inputs a string X and a string Y and decides if Y is a member of the canonical system based on X *would only decide correctly* when X and Y are equivalent.
 
 So did Post misstate something or is the sentence just confusing?
 

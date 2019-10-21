@@ -1,8 +1,25 @@
 const fs = require('fs');
+const shortid = require('shortid');
 const baseDir = process.cwd()
 const markdownIt = require('markdown-it')({
     html: true,
 });
+
+const addIdIfNoneExists = (file, filepath) => {
+    let ids = [];
+    let firstLine = file.split('\n')[0];
+    if (firstLine.includes('publicId=')) {
+        let id = firstLine.split('=')[1];
+        ids.push(id);
+    } else {
+        let id = shortid.generate();
+        while (ids.includes(id)) {
+            id = shortid.generate();
+        }
+        file = `publicId=${id}\n` + file;
+    }
+    fs.writeFileSync(filepath, file);
+}
 
 const readMetadata = (metadata) => {
     let data = {};
@@ -77,7 +94,9 @@ const build = () => {
     let articles = [];
     let drafts = fs.readdirSync('article-drafts');
     drafts.forEach(title => {
-        let file = fs.readFileSync(`article-drafts/${title}`, 'utf8');
+        let filepath = `article-drafts/${title}`;
+        let file = fs.readFileSync(filepath, 'utf8');
+        addIdIfNoneExists(file, filepath);
         let path = `articles/${title}`.replace('.md', '.html');
         let [metadata, markdown] = file.split('---');
         let data = readMetadata(metadata);
@@ -90,7 +109,9 @@ const build = () => {
         articles.push(data);
     });
     let articlesJS = `const articles = ${JSON.stringify(articles)}`;
+    let articlesJSON = `${JSON.stringify(articles)}`;
     fs.writeFileSync('data/articles.js', articlesJS);
+    fs.writeFileSync('data/articles.json', articlesJSON);
 }
 
 build();
