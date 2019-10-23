@@ -1,9 +1,11 @@
+require('dotenv').config();
 const fs = require('fs');
 const shortid = require('shortid');
 const baseDir = process.cwd()
-const markdownIt = require('markdown-it')({
-    html: true,
-});
+const markdownIt = require('markdown-it')({html: true});
+const mongo = require('mongodb').MongoClient;
+const MONGODB_URI = process.env.MONGODB_URI;
+const DB_NAME = process.env.DB_NAME;
 
 const addIdIfNoneExists = (file, filepath) => {
     let ids = [];
@@ -19,6 +21,10 @@ const addIdIfNoneExists = (file, filepath) => {
         file = `publicId=${id}\n` + file;
     }
     fs.writeFileSync(filepath, file);
+}
+
+const createRecordIfNoneExists = (db, data) => {
+    db.collection('article').insertOne()
 }
 
 const readMetadata = (metadata) => {
@@ -96,7 +102,7 @@ const build = () => {
     drafts.forEach(title => {
         let filepath = `article-drafts/${title}`;
         let file = fs.readFileSync(filepath, 'utf8');
-        addIdIfNoneExists(file, filepath);
+        let publicId = addIdIfNoneExists(file, filepath);
         let path = `articles/${title}`.replace('.md', '.html');
         let [metadata, markdown] = file.split('---');
         let data = readMetadata(metadata);

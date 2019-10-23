@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>What is the Conservation of Momentum?</h1>
+<h2>Reading &quot;The Feynman Lectures on Physics&quot;</h2>
+<h2>Volume 1, Chapter 10, Section 2</h2>
+<p>The momentum of an object at a particular moment is equal to the object's mass and velocity at that moment. That means that you can represent the momentum of the object over time as the function <code>momentumAt(time) = mass * velocityAt(time)</code>.</p>
+<p>With a <em>system of objects</em>, you can think about the momentum at a particular moment of the <em>system itself</em> by adding up, at that moment, all of the individual momentums of each object in the system. For example, if the system consists of objects A, B, and C, then the total momentum of the system at the 42 second mark equals <code>A_momentumAt(42) + B_momentumAt(42) + C_momentumAt(42)</code>. And that means that you can represent the total momentum of a system as a function over time. For the example system, the function looks like this:</p>
+<pre><code>totalMomentumAt(time) =
+A_momentumAt(time) +
+B_momentumAt(time) +
+C_momentumAt(time)
+</code></pre>
+<p>The Conservation of Momentum says that the total momentum of a system does not change. In other words,  <code>timeDerivativeOf(totalMomentumAt) = 0</code>. If the total momentum started at 42 units then it will always be 42 units.</p>
+
+            <div>
+                <button class="thanks-button">🙌 Thanks, this helped!</button>
+            </div>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let article = {"publish":"true","date":"10/23/2019","title":"What is the Conservation of Momentum?","subheadings":["Reading \"The Feynman Lectures on Physics\"","Volume 1, Chapter 10, Section 2"],"url":"articles/what-is-the-conservation-of-momentum.html"};
+    </script>
+    <script src="/js/article.js"></script>
+</body>
+</html>

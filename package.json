@@ -4,7 +4,9 @@
     "description": "My personal website",
     "main": "app.js",
     "scripts": {
-        "build": "node ./scripts/build.js"
+        "build": "node ./scripts/build.js",
+        "build2": "node ./scripts/build2.js",
+        "article": "node ./scripts/article.js"
     },
     "author": "Mark Schumaker",
     "license": "ISC",
@@ -12,6 +14,8 @@
         "markdown-it": "9.1.0",
         "prismjs": "1.17.1",
         "highlightjs": "9.12.0",
-        "shortid": "2.2.15"
+        "shortid": "2.2.15",
+        "mongodb": "3.3.3",
+        "dotenv": "8.2.0"
     }
 }
