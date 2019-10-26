@@ -6,7 +6,7 @@
     "scripts": {
         "build": "node ./scripts/build.js",
         "build2": "node ./scripts/build2.js",
-        "article": "node ./scripts/article.js"
+        "create": "node ./scripts/create.js"
     },
     "author": "Mark Schumaker",
     "license": "ISC",
