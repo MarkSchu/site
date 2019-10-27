@@ -5,7 +5,7 @@ const markdownIt = require('markdown-it')({html: true});
 const draftsFolder = 'new-article-drafts';
 const articlesFolder = 'new-articles';
 
-const readMetadata = (metadata) => {
+const metadataToObj = (metadata) => {
     let data = {};
     let lines = metadata.split('\n');
     lines.pop();
@@ -83,14 +83,15 @@ const build = () => {
         let file = fs.readFileSync(filepath, 'utf8');
         let path = `${articlesFolder}/${title}`.replace('.md', '.html');
         let [metadata, markdown] = file.split('---');
-        let data = readMetadata(metadata);
-        data.title = getTitle(markdown);
-        data.subheadings = getSubheadings(markdown);
-        data.url = path;
-        let articleHtml = markdownIt.render(markdown);
-        let pageHtml = addBaseHtml(articleHtml, data);
-        fs.writeFileSync(path, pageHtml);
-        articles.push(data);
+        let data = metadataToObj(metadata);
+
+        // data.title = getTitle(markdown);
+        // data.subheadings = getSubheadings(markdown);
+        // data.url = path;
+        // let articleHtml = markdownIt.render(markdown);
+        // let pageHtml = addBaseHtml(articleHtml, data);
+        // fs.writeFileSync(path, pageHtml);
+        // articles.push(data);
     });
     let articlesJS = `const newArticles = ${JSON.stringify(articles)}`;
     fs.writeFileSync('data/new-articles.js', articlesJS);
