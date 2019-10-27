@@ -4,14 +4,21 @@ const fs = require('fs');
 const mongo = require('mongodb').MongoClient;
 const MONGODB_URI = process.env.MONGODB_URI;
 const DB_NAME = process.env.DB_NAME;
-const draftsFolder = 'article-drafts-test';
+const draftsFolder = 'new-article-drafts';
 let db;
 
+const getDate = () => {
+    var today = new Date(Date.now());
+    var day = today.getDate();
+    var month = today.getMonth()+1;
+    var year = today.getFullYear();
+    return `${month}/${day}/${year}`
+}
 
 const create = () => {
     return db.collection('article').insertOne({}).then((record) => {
         let id = record.insertedId;
-        let date = (new Date(Date.now())).toLocaleDateString();
+        let date = getDate();
         let article = (
             'id=' + id + '\n' +
             'date=' + date + '\n' +
