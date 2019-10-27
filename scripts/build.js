@@ -73,7 +73,7 @@ const addBaseHtml = (articleHtml, data) => {
                 <a href="/about.html">👋</a>
             </header>
             ${articleHtml}
-            <div>
+        <div>
                 <button class="thanks-button">🙌 Thanks, this helped!</button>
             </div>
             <footer>

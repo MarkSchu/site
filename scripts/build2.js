@@ -32,16 +32,4 @@ const build = () => {
     });
 }
 
-mongo
-.connect(MONGODB_URI, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true,
-})
-.then((client) => {
-    db = client.db(DB_NAME);
-    console.log(`Connected to database ${db.databaseName}`);
-    build();
-})
-.catch((error) => {
-    console.log(`Failed to connect to database. Error: ${error}`);
-});
+build();
