@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>The Class K in English</h1>
+<h2>Reading &quot;On Formally Undecidable Propositions of Principia Mathematica and Related Systems&quot; by Kurt Godel, Part 2</h2>
+<p>In Godel's summary of his own proof, he describes a very important set of numbers, what he calls &quot;The Concept K.&quot; The notation that he uses to express the class, however, is difficult to follow, so I tried to write a translation that is easier to read.</p>
+<p>First, some setup.</p>
+<p>Think about all the open formulas in the Principia with one free variable of the type Number. For example, <code>x = 0</code> is a formula that (1) has a single free variable <code>x</code>, which (2) is of the type, Number. (Godel calls these &quot;class-expressions&quot;. I'm not entirely sure why but my best guess is that numbers are defined as classes of classes, like sets of pairs).</p>
+<p>Now, put all the formulas like this into a list. The formula <code>x = 0</code>, for example, might be the 121st member of the list. It doesn't matter how we make the list, just that there is one. I'm going to call this <em>The List</em>.</p>
+<p>Next, define a function in the Principia that picks out members of The List. Godel calls this function <code>R</code>; I'm going to use the name <code>formulaAt</code>. <code>formulaAt(121)</code>, for example,  refers to the 121st formula of The List.</p>
+<p>We also need a way to talk about the formula you get when you replace the free variable in an open formula with a number. Godel uses the notation <code>[α;n]</code> to mean the formula you get by replacing the free variable in open formula <code>α</code> with the number <code>n</code>. Greek letters and semicolons throw me off so I'm going to use <code>[F:n]</code> instead.</p>
+<p>Finally, Godel uses the notation <code>Bew x</code> to mean <code>x</code> is provable. I'm going to rename that too. Now <code>isProvable(x)</code> means <code>x</code> is provable.</p>
+<p>We're ready for K. First I'm going to write it in English and then I'm going to use the alternative names I mentioned above.</p>
+<blockquote>
+<p>The number <code>n</code> is in the class K if the formula at position <code>n</code> of The List is not provable.</p>
+</blockquote>
+<p>With renamed functions and some notation from logic :</p>
+<pre><code class="language-text">n ∈ K ⇔ ~isProvable([formulaAt(n):n])
+</code></pre>
+<p>For example, 42 is in K if the formula at position 42 of The List is not provable in the Principia.</p>
+<p>That's the concept K.</p>
+
+        <div>
+                <button class="thanks-button">🙌 Thanks, this helped!</button>
+            </div>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let article = {"publicId":"WgFqoDjY","date":"10/28/2019","publish":"true","title":"The Class K in English","subheadings":["Reading \"On Formally Undecidable Propositions of Principia Mathematica and Related Systems\" by Kurt Godel, Part 2"],"url":"articles/the-class-k-in-english.html"};
+    </script>
+    <script src="/js/article.js"></script>
+</body>
+</html>
