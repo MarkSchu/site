@@ -1,6 +1,5 @@
-id=5db5b284b935365e02a4a8f9
-date=10/6/2019
 publish=true
+date=10/6/2019
 ---
 # What is the Problem of Thue?
 

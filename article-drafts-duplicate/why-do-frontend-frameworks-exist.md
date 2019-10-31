@@ -1,6 +1,5 @@
-id=5db5b1ea09e76a5dd2f0ac69
-date=9/12/2019
 publish=true
+date=9/12/2019
 ---
 # Why Do Frontend Frameworks Exist?
 

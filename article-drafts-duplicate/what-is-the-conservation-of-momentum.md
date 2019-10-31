@@ -1,5 +1,3 @@
-publicId=2H_JRvYxXh
-id=5dba3d16f6db6d7638e0c64c
 publish=true
 date=10/23/2019
 ---

@@ -1,1 +1,0 @@
-const newArticles = [{"id":"5db5a14ca4d3985d612d6951","date":"2019-10-27","publish":"true","title":"","subheadings":[],"url":"new-articles/NEW-ARTICLE-5db5a14ca4d3985d612d6951.html"}]
