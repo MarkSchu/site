@@ -35,4 +35,7 @@ const isMemberOfK = (n) => {
 }
 ```
 
-That, to me at least, clears things up a bit.
+
+Here is a picture.
+
+<img src="../images/classK.png" />
