@@ -95,7 +95,6 @@ const build = () => {
     drafts.forEach(title => {
         let filepath = `article-drafts/${title}`;
         let file = fs.readFileSync(filepath, 'utf8');
-        let publicId = addIdIfNoneExists(file, filepath);
         let path = `articles/${title}`.replace('.md', '.html');
         let [metadata, markdown] = file.split('---');
         let data = readMetadata(metadata);

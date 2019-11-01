@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>The Class K Again</h1>
+<h2>Reading &quot;On Formally Undecidable Propositions of Principia Mathematica and Related Systems&quot; by Kurt Godel, Part 3</h2>
+<p>I got the class K wrong in &quot;<a href="/articles/the-class-k-in-english.html">The Class K in English</a>&quot;. Here is another try.</p>
+<p>Membership in the class K is defined in terms of three functions and a list of all the open formulas with one variable that I'm calling
+<em>The List</em>. (Godel calls open formulas with one variable &quot;class-expressions.&quot; Just an FYI.)</p>
+<p>First, <code>isProvable(prop)</code> means that the proposition <code>prop</code> is provable.</p>
+<p>Second, <code>formulaAt(n)</code> refers to the <code>nth</code> formula of the <em>The List</em>.</p>
+<p>Third, <code>replace(formula, n)</code> means the proposition that results from replacing the free variable in the <code>formula</code> with the number <code>n</code>. We're only dealing with class-expressions so there is only ever one free variable.</p>
+<p>All together, membership in K is defined like this.</p>
+<blockquote>
+<p><code>n</code> is in K when <br><code>~isProvable(replace(formulaAt(n), n))</code></p>
+</blockquote>
+<p>That is</p>
+<blockquote>
+<p><code>n</code> is a member of K if the proposition that you get by replacing the free variable in the <code>nth</code> formula of <em>The List</em> is not provable.</p>
+</blockquote>
+<p>Both are awkward to read, so here is how I'd write it as a function in a programming language like JavaScript.</p>
+<pre><code class="language-javascript">const isMemberOfK = (n) =&gt; {
+	let formula = formulaAt(n);
+	let proposition = replace(formula, n);
+	let result = isProvable(proposition);
+	return result;
+}
+</code></pre>
+<p>That, to me at least, clears things up a bit.</p>
+
+        <div>
+                <button class="thanks-button">🙌 Thanks, this helped!</button>
+            </div>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let article = {"publicId":"4XurOoLp","publish":"true","date":"11/1/2019","title":"The Class K Again","subheadings":["Reading \"On Formally Undecidable Propositions of Principia Mathematica and Related Systems\" by Kurt Godel, Part 3"],"url":"articles/the-class-k-again.html"};
+    </script>
+    <script src="/js/article.js"></script>
+</body>
+</html>
