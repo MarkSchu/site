@@ -37,6 +37,11 @@ p {
     line-height: 1.7;
 }
 
+#github-logo {
+    height: 20px;
+    width: 20px;
+}
+
 .article h1,
 .article h2 {
     font-size: 18px;
