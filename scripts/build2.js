@@ -146,10 +146,8 @@ mongo
     useNewUrlParser: true,
 })
 .then((client) => {
-
     db = client.db(DB_NAME);
     console.log(`Connected to database ${db.databaseName}`);
-
     console.log('Building');
     return build();
 })
