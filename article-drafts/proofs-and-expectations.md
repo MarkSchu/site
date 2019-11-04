@@ -1,8 +1,9 @@
-publicId=xOAfyK6UI
-id=5dba3d16f6db6d7638e0c642
 publish=true
 date=10/22/2019
+id=3vjlasc2k2knq0k0
 ---
+
+
 # Proofs and Expectations
 
 If I presented an axiom system that consisted of one axiom and one rule of deduction and pointed out that there are statements that the system can't decide, you wouldn't be surprised. And you wouldn't be surprised because you wouldn't expect such a simple system to decide every statement.

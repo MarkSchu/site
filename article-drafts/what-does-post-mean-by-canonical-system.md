@@ -1,8 +1,9 @@
-publicId=MufTTQ3mE
-id=5dba3d16f6db6d7638e0c648
 publish=true
 date=10/15/2019
+id=3vjlasc2k2knq0ku
 ---
+
+
 # What Does Post Mean by Canonical System?
 ## Reading "The Undecidable"
 ## Emil Post, "Recursive Unsolvability of a Problem of Thue"

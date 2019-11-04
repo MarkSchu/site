@@ -1,9 +1,10 @@
-publicId=qScHOqF8W
-id=5dba3d16f6db6d7638e0c641
 publish=true
 summary=Why do billiard balls that don't move effect billiard balls that do?
 date=10/17/2019
+id=3vjlasc2k2knq0jy
 ---
+
+
 # Newton's Third Law Explained with Pool
 
 Think of a game of pool. When a moving ball hits a stationary ball and sends it flying, the ball that does the hitting changes trajectory. In physics, a change of trajectory is an acceleration, and an acceleration only ever occurs in the presence of a force. That means that there is a force that caused the moving ball to change course.

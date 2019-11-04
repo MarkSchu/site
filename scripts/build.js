@@ -1,35 +1,9 @@
 require('dotenv').config();
 const fs = require('fs');
-const shortid = require('shortid');
+const uniqid = require('uniqid');
 const baseDir = process.cwd()
 const markdownIt = require('markdown-it')({html: true});
-
-const addIdIfNoneExists = (file, filepath) => {
-    let ids = [];
-    let firstLine = file.split('\n')[0];
-    if (firstLine.includes('publicId=')) {
-        let id = firstLine.split('=')[1];
-        ids.push(id);
-    } else {
-        let id = shortid.generate();
-        while (ids.includes(id)) {
-            id = shortid.generate();
-        }
-        file = `publicId=${id}\n` + file;
-    }
-    fs.writeFileSync(filepath, file);
-}
-
-const readMetadata = (metadata) => {
-    let data = {};
-    let lines = metadata.split('\n');
-    lines.pop();
-    lines.forEach(line => {
-        let [key, value] = line.split('=');
-        data[key] = value;
-    });
-    return data;
-}
+const {metadataToObj, metadataToStr} = require('./helpers');
 
 const getTitle = (markdown) => {
     let lines = markdown.split('\n');
@@ -97,7 +71,12 @@ const build = () => {
         let file = fs.readFileSync(filepath, 'utf8');
         let path = `articles/${title}`.replace('.md', '.html');
         let [metadata, markdown] = file.split('---');
-        let data = readMetadata(metadata);
+        let data = metadataToObj(metadata);
+        if (!data.id) {
+            data.id =  uniqid();
+            let metadata = metadataToStr(data);
+            fs.writeFileSync(filepath, metadata + '---\n' + markdown)
+        }
         data.title = getTitle(markdown);
         data.subheadings = getSubheadings(markdown);
         data.url = path;
@@ -107,9 +86,7 @@ const build = () => {
         articles.push(data);
     });
     let articlesJS = `const articles = ${JSON.stringify(articles)}`;
-    let articlesJSON = `${JSON.stringify(articles)}`;
     fs.writeFileSync('data/articles.js', articlesJS);
-    fs.writeFileSync('data/articles.json', articlesJSON);
 }
 
 build();

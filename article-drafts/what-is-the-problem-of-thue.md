@@ -1,8 +1,9 @@
-publicId=InScCvqfDb
-id=5dba3d16f6db6d7638e0c64d
 publish=true
 date=10/6/2019
+id=3vjlasc2k2knq0l5
 ---
+
+
 # What is the Problem of Thue?
 
 The Problem of Thue is a general computational decision problem that is unsolvable. A general computational decision problem is a collection of specific problems of the form "Is X such-and-such?" where X is some type of object. For example, "Is X Prime?" is a general computational problem where X is a number. It includes specific problems like "Is 7 Prime?", "Is 101 Prime?", and "Is 1042 Prime?". Some problems, like the Problem of Thue, involve multiple kinds of object and so look like this: "Are X, Y, etc. such-and-such?".

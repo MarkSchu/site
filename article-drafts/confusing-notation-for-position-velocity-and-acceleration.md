@@ -1,8 +1,9 @@
-publicId=OzMqAUaOX
-id=5dba3d16f6db6d7638e0c63c
 publish=true
 date=10/16/2019
+id=3vjlasc2k2knq0jg
 ---
+
+
 # Confusing Notation: Numbers or Functions?
 ## Reading "The Feynman Lectures on Physics"
 ## Volume 1, Chapter 9

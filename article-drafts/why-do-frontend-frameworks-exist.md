@@ -1,8 +1,9 @@
-publicId=X-vPs9-Bke
-id=5dba3d16f6db6d7638e0c64e
 publish=true
 date=9/12/2019
+id=3vjlasc2k2knq0lb
 ---
+
+
 # Why Do Frontend Frameworks Exist?
 
 When I first got into web development, I didn't understand why frontend frameworks like React, Vue, and Angular existed. Here, I'm briefly going to explain why.

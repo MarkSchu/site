@@ -1,8 +1,9 @@
-publicId=LmOi8Tx5
-id=5dba3d16f6db6d7638e0c63a
 date=10/27/2019
 publish=true
+id=3vjlasc2k2knq0iv
 ---
+
+
 # A Few Thought Experiments
 ## Reading "The Feynman Lectures on Physics", Volume 1, Chapter 10, Section 2
 

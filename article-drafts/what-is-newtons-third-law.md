@@ -1,8 +1,9 @@
-publicId=80_k0fvHDE
-id=5dba3d16f6db6d7638e0c64b
 publish=true
 date=10/17/2019
+id=3vjlasc2k2knq0l1
 ---
+
+
 # What is Newton's Third Law of Motion?
 ## Reading "The Feynman Lectures on Physics"
 ## Volume 1, Chapter 9, Section 1

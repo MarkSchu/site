@@ -1,8 +1,9 @@
-publicId=CcwjtQ2yJ
-id=5dba3d16f6db6d7638e0c63e
 publish=true
 date=9/23/2019
+id=3vjlasc2k2knq0jn
 ---
+
+
 # Describing Motion in Physics
 
 The world described in "[Describing Position in Physics](/articles/describing-position-in-physics.html)" is interesting to look at but a little boring. Nothing about it ever changes.

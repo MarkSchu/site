@@ -6,7 +6,8 @@
     "scripts": {
         "build": "node ./scripts/build.js",
         "build2": "node ./scripts/build2.js",
-        "create": "node ./scripts/create.js"
+        "create": "node ./scripts/create.js",
+        "clean": "node ./scripts/clean.js"
     },
     "author": "Mark Schumaker",
     "license": "ISC",
@@ -14,7 +15,7 @@
         "markdown-it": "9.1.0",
         "prismjs": "1.17.1",
         "highlightjs": "9.12.0",
-        "shortid": "2.2.15",
+        "uniqid": "5.1.0",
         "mongodb": "3.3.3",
         "dotenv": "8.2.0"
     }

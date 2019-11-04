@@ -1,8 +1,9 @@
-publicId=qknMVp_4s
-id=5dba3d16f6db6d7638e0c647
 publish=true
 date=10/17/2019
+id=3vjlasc2k2knq0km
 ---
+
+
 # What does △x Mean?
 ## Reading "The Feynman Lectures on Physics"
 ## Volume 1, Chapter 9
