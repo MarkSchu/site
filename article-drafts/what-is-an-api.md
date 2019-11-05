@@ -2,8 +2,6 @@ publish=true
 date=9/18/2019
 id=3vjlasc2k2knq0kx
 ---
-
-
 # What is an API?
 
 I remember being confused by the use of the term "API" (i.e. application programming interface) when I started in web development. The reason, I think, is that the term is used in two related, but different ways. First, it is used to mean a set of HTTP method-url pairs that you can send HTTP requests to. Second, it is used to mean the methods and properties of a module, class, or class instance. I'll explain.

@@ -2,8 +2,6 @@ publish=true
 date=10/21/2019
 id=3vjlasc2k2knq0k9
 ---
-
-
 # The Expression of Newton's Second Law is Confusing
 
 I think it's confusing to write Newton's Second Law in the form `force = mass * acceleration`.

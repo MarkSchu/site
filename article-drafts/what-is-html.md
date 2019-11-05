@@ -2,8 +2,6 @@ publish=true
 date=9/3/2019
 id=3vjlasc2k2knq0l0
 ---
-
-
 # What is HTML?
 
 The original purpose of the internet was to share text documents like articles. When you give a web browser a file with text, it displays the text. And that means that you can send someone a file and they can use their browser to read it.

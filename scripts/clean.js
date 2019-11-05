@@ -8,18 +8,10 @@ drafts.forEach((title) => {
     let file = fs.readFileSync(filepath, 'utf8');
     let [metadata, markdown] = file.split('---');
 
-    metadata = metadataToObj(metadata);
+    // metadata = metadataToObj(metadata);
+    //
+    // metadata = metadataToStr(metadata);
 
-    if (metadata.id) {
-        delete metadata.id;
-    }
-
-    if (metadata.publicId) {
-        delete metadata.publicId;
-    }
-
-    metadata = metadataToStr(metadata);
-
-    let newFile = metadata + '---\n' + markdown;
+    let newFile = metadata + '---\n' + markdown.trim();
     fs.writeFileSync(filepath, newFile);
 });

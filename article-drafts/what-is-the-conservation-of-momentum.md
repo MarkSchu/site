@@ -2,8 +2,6 @@ publish=true
 date=10/23/2019
 id=3vjlasc2k2knq0l4
 ---
-
-
 # What is the Conservation of Momentum?
 ## Reading "The Feynman Lectures on Physics"
 ## Volume 1, Chapter 10, Section 2

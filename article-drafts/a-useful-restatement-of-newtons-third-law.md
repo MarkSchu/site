@@ -2,8 +2,6 @@ publish=true
 date=10/29/2019
 id=3vjlasc2k2knq0jc
 ---
-
-
 # A Restatement of Newton's Third Law that You Can Use
 
 I often hear Newton's Third Law stated as, "Every action has an opposite and equal reaction." As a beginner learning physics, I don't really understand what this statement says and I certainly don't understand *how to use* it.
