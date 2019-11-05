@@ -37,12 +37,13 @@
 <pre><code class="language-javascript">const isMemberOfK = (n) =&gt; {
 	let formula = formulaAt(n);
 	let proposition = replace(formula, n);
-	let result = isProvable(proposition);
+	let result = !isProvable(proposition);
 	return result;
 }
 </code></pre>
 <p>Here is a picture.</p>
 <img src="../images/classK.png" />
+
         <div>
                 <button class="thanks-button">🙌 Thanks, this helped!</button>
             </div>
