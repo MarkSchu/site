@@ -30,7 +30,7 @@ Both are awkward to read, so here is how I'd write it as a function in a program
 const isMemberOfK = (n) => {
 	let formula = formulaAt(n);
 	let proposition = replace(formula, n);
-	let result = isProvable(proposition);
+	let result = !isProvable(proposition);
 	return result;
 }
 ```
