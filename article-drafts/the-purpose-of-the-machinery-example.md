@@ -2,7 +2,6 @@ publish=true
 date=11/6/2019
 id=3vjlavskk2nba34g
 ---
-
 # The Purpose of the Machinery Example
 ## Reading "The Feynman Lectures on Physics"
 ## Volume 1, Chapter 11, Section 1
