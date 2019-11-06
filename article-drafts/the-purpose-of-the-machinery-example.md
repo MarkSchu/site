@@ -5,7 +5,7 @@ id=3vjlavskk2nba34g
 
 # The Purpose of the Machinery Example
 ## Reading "The Feynman Lectures on Physics"
-## Volume 1, Chapter 1, Section 1
+## Volume 1, Chapter 11, Section 1
 
 At the beginning of chapter 11, Feynman introduces an example to talk about symmetry in physical law.
 
