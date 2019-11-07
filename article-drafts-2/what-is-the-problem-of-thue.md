@@ -1,7 +1,6 @@
-publicId=InScCvqfDb
-id=5dba3d16f6db6d7638e0c64d
 publish=true
 date=10/6/2019
+id=3vjlasc2k2knq0l5
 ---
 # What is the Problem of Thue?
 
@@ -65,4 +64,4 @@ EGGEGGEG		<br>
 
 If you could solve the Problem of Thue, then the algorithm could figure this out. Somehow, it would know that such a series of strings existed. If you input EEEGFFF and EGEGGEG, it would output Yes. And if you input any other two strings, it would output Yes or No correctly.
 
-That's the Problem of Thue.   
+That's the Problem of Thue.

@@ -1,6 +1,6 @@
 publish=true
 date=10/15/2019
-id=3vjlasc2k2knq0ku
+publicid=3vjlaxssk2o4ervf
 ---
 # What Does Post Mean by Canonical System?
 ## Reading "The Undecidable"

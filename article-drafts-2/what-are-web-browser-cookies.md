@@ -1,9 +1,9 @@
-publicId=s-6zI3GcK
-id=5dba3d16f6db6d7638e0c646
 publish=true
 date=9/17/2019
+id=3vjlasc2k2knq0ke
 ---
 # What are Web Browser Cookies?
+## Web Development for Beginners
 
 A web browser cookie is a way to store data that is associated with a website on a web browser. The best way to understand this is to understand a problem that cookies solve.
 

@@ -1,6 +1,6 @@
 date=10/31/2019
 publish=true
-id=3vjlasc2k2knq0ks
+publicid=3vjlaxssk2o4erva
 ---
 # What Does Galilean Relativity Mean?
 ## Reading "The Feynman Lectures on Physics", Volume 1, Chapter 10, Section 3

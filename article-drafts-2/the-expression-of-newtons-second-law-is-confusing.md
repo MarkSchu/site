@@ -1,8 +1,6 @@
-publicId=DR56bal5G
-id=5dba3d16f6db6d7638e0c644
-publicId
 publish=true
 date=10/21/2019
+id=3vjlasc2k2knq0k9
 ---
 # The Expression of Newton's Second Law is Confusing
 

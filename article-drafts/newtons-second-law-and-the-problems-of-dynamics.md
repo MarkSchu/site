@@ -1,6 +1,6 @@
 publish=true
 date=10/13/2019
-id=3vjlasc2k2knq0jw
+publicid=3vjlaxssk2o4eru6
 ---
 # Newton’s Second Law and the Problems of Dynamics
 ## Reading The Feynman Lectures on Physics

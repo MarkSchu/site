@@ -1,9 +1,12 @@
 require('dotenv').config();
 const fs = require('fs');
+const mongo = require('mongodb').MongoClient;
 const uniqid = require('uniqid');
-const baseDir = process.cwd()
 const markdownIt = require('markdown-it')({html: true});
 const {metadataToObj, metadataToStr} = require('./helpers');
+let db;
+let MONGODB_URI;
+let DB_NAME;
 
 const getTitle = (markdown) => {
     let lines = markdown.split('\n');
@@ -66,14 +69,16 @@ const addBaseHtml = (articleHtml, data) => {
 const build = () => {
     let articles = [];
     let drafts = fs.readdirSync('article-drafts');
+
+    // build the html
     drafts.forEach(title => {
         let filepath = `article-drafts/${title}`;
         let file = fs.readFileSync(filepath, 'utf8');
         let path = `articles/${title}`.replace('.md', '.html');
         let [metadata, markdown] = file.split('---');
         let data = metadataToObj(metadata);
-        if (!data.id) {
-            data.id =  uniqid();
+        if (!data.publicid) {
+            data.publicid =  uniqid();
             let metadata = metadataToStr(data);
             fs.writeFileSync(filepath, metadata + '---\n' + markdown)
         }
@@ -87,6 +92,45 @@ const build = () => {
     });
     let articlesJS = `const articles = ${JSON.stringify(articles)}`;
     fs.writeFileSync('data/articles.js', articlesJS);
+
+    // build a record in the mongo db
+    let promises = articles.map(article => {
+        return db
+        .collection('article')
+        .findOne({publicid: article.publicid})
+        .then((result) => {
+            console.log(result);
+            if (!result) {
+                return db.collection('article').insertOne(article);
+            } else {
+                return Promise.resolve();
+            }
+        });
+    });
+
+    return Promise.all(promises);
 }
 
-build();
+// build();
+
+MONGODB_URI = 'mongodb://localhost:27017';
+DB_NAME = 'local-markschu-api';
+
+mongo
+.connect(MONGODB_URI, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+})
+.then((client) => {
+    db = client.db(DB_NAME);
+    console.log(`Connected to database ${db.databaseName}`);
+    console.log('Building');
+    return build();
+})
+.then(() => {
+    console.log('All done');
+    process.exit(0);
+})
+.catch((error) => {
+    console.log(`Failed to connect to database. Error: ${error}`);
+});

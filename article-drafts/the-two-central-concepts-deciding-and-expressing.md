@@ -1,6 +1,6 @@
 date=10/26/2019
 publish=true
-id=3vjlasc2k2knq0kc
+publicid=3vjlaxssk2o4eruv
 ---
 # The Two Central Concepts: Deciding and Expressing
 ## Reading "On Formally Undecidable Propositions of Principia Mathematica and Related Systems" by Kurt Godel, Part 1

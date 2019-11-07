@@ -1,7 +1,6 @@
-publicId=CcwjtQ2yJ
-id=5dba3d16f6db6d7638e0c63e
 publish=true
 date=9/23/2019
+id=3vjlasc2k2knq0jn
 ---
 # Describing Motion in Physics
 

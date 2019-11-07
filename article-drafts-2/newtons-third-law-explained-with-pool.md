@@ -1,8 +1,7 @@
-publicId=qScHOqF8W
-id=5dba3d16f6db6d7638e0c641
 publish=true
 summary=Why do billiard balls that don't move effect billiard balls that do?
 date=10/17/2019
+id=3vjlasc2k2knq0jy
 ---
 # Newton's Third Law Explained with Pool
 

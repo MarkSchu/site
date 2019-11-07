@@ -1,6 +1,6 @@
 publish=true
 date=11/1/2019
-id=3vjlasc2k2knq0k1
+publicid=3vjlaxssk2o4erug
 ---
 # The Class K Again
 ## Reading "On Formally Undecidable Propositions of Principia Mathematica and Related Systems" by Kurt Godel, Part 3

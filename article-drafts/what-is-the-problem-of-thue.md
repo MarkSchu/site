@@ -1,6 +1,6 @@
 publish=true
 date=10/6/2019
-id=3vjlasc2k2knq0l5
+publicid=3vjlaxssk2o4ervy
 ---
 # What is the Problem of Thue?
 

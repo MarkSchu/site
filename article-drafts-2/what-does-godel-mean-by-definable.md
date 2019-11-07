@@ -1,6 +1,6 @@
 publish=true
 date=11/5/2019
-publicid=3vjlaxssk2o4ervd
+id=3vjlauflk2ludifj
 ---
 # What Does Godel Mean by "Definable"?
 ## A Confusion

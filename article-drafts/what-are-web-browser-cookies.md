@@ -1,6 +1,6 @@
 publish=true
 date=9/17/2019
-id=3vjlasc2k2knq0ke
+publicid=3vjlaxssk2o4eruy
 ---
 # What are Web Browser Cookies?
 ## Web Development for Beginners

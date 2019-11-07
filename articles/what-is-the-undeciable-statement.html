@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>What is the Undecidable Statement?</h1>
+<h2>An Explanation</h2>
+<h2>Reading &quot;On Formally Undecidable Propositions of Principia Mathematica and Related Systems&quot; by Kurt Godel, Part 5</h2>
+<p>Godel's proof says that there is a statement, written in the language of the Principia, that the Principia cannot prove and cannot prove its negation.</p>
+<p>So what's the statement?</p>
+<p>The statement is defined in terms of the class K, so it requires a little setup.</p>
+<p>The class K is a set of numbers. It's created like this. First, take all the open formulas in the Principia that have a single variable - for example, <code>x = 0</code> - and put them in a list. Since they're in a list, every formula is associated with a specific number, namely, its position in the list.</p>
+<img src="/images/undecide1.png" />
+<p>In the list above, <code>x = 0</code> is at position 5.</p>
+<p>Next, create a list of statements from the list of formulas by replacing the free variable in the formula with the formula's position number. For example, since <code>x = 0</code> is at position 5, we get the statement <code>5 = 0</code>.</p>
+<img src="/images/undecide2.png" />
+<p>Finally, go through the list of propositions and decide if each proposition has a proof in the Principia or not. <code>5 = 0</code> does not have a proof.</p>
+<img src="/images/undecide3.png" />
+<p>A number is a member of K if it is associated with a statement that isn't provable. Since <code>5 = 0</code> is not provable and the statement is associated with the number 5, 5 is a member of K.</p>
+<img src="/images/undecide5.png" />
+<p>As it turns out, the metalinguistic property &quot;x is a member of K&quot; is definable in the Principia. That means that there is an open formula - call it <code>isMemberOfK(x)</code> - that satisfies the following criteria:</p>
+<ol>
+<li>
+<p>x is in K when <code>isMemberOfK(x)</code> has a proof</p>
+</li>
+<li>
+<p>x is not in K when <code>~isMemberOf(x)</code> has a proof</p>
+</li>
+</ol>
+<p>Now for the weird part.</p>
+<p>Since <code>isMemberOfK(x)</code> is an open formula with a single free variable, it is in the list of open formulas. Imagine, for no particular reason, that it's located at position 42.</p>
+<img src="/images/undecide6.png" />
+<p>That means that <code>isMemberOfK(42)</code> is on the list of statements.</p>
+<img src="/images/undecide7.png" />
+<p>The statement <code>isMemberOfK(42)</code> is the undecidable statement in Godel's proof. It and its negation do not have proofs in the Principia.</p>
+
+        <div>
+                <button class="thanks-button">🙌 Thanks, this helped!</button>
+            </div>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let article = {"publish":"true","date":"11/7/2019","publicid":"3vjlay9ak2oqwgsw","title":"What is the Undecidable Statement?","subheadings":["An Explanation","Reading \"On Formally Undecidable Propositions of Principia Mathematica and Related Systems\" by Kurt Godel, Part 5"],"url":"articles/what-is-the-undeciable-statement.html"};
+    </script>
+    <script src="/js/article.js"></script>
+</body>
+</html>

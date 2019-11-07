@@ -1,6 +1,6 @@
-publicId=4XurOoLp
 publish=true
 date=11/1/2019
+id=3vjlasc2k2knq0k1
 ---
 # The Class K Again
 ## Reading "On Formally Undecidable Propositions of Principia Mathematica and Related Systems" by Kurt Godel, Part 3
@@ -30,7 +30,7 @@ Both are awkward to read, so here is how I'd write it as a function in a program
 const isMemberOfK = (n) => {
 	let formula = formulaAt(n);
 	let proposition = replace(formula, n);
-	let result = isProvable(proposition);
+	let result = !isProvable(proposition);
 	return result;
 }
 ```

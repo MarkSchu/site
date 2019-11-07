@@ -1,6 +1,6 @@
 publish=true
 date=10/17/2019
-id=3vjlasc2k2knq0km
+publicid=3vjlaxssk2o4erv8
 ---
 # What does △x Mean?
 ## Reading "The Feynman Lectures on Physics"
