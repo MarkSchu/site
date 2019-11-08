@@ -99,7 +99,6 @@ const build = () => {
         .collection('article')
         .findOne({publicid: article.publicid})
         .then((result) => {
-            console.log(result);
             if (!result) {
                 return db.collection('article').insertOne(article);
             } else {
