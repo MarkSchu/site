@@ -1,4 +1,5 @@
 require('dotenv').config();
+const env = process.argv[2];
 const fs = require('fs');
 const mongo = require('mongodb').MongoClient;
 const uniqid = require('uniqid');
@@ -7,6 +8,23 @@ const {metadataToObj, metadataToStr} = require('./helpers');
 let db;
 let MONGODB_URI;
 let DB_NAME;
+
+if (env !== 'prod' && env !== 'test') {
+    console.log('Must pass "prod" or "test" as an argument');
+    process.exit(0);
+}
+
+if (env == 'prod') {
+    MONGODB_URI = process.env.MONGODB_URI;
+    DB_NAME = process.env.DB_NAME;
+    console.log('\n*** This is a Production Build. Your Heroku/mLab database will get filled with documents! ***\n');
+}
+
+if (env === 'test') {
+    MONGODB_URI = 'mongodb://localhost:27017';
+    DB_NAME = 'local-markschu-api-10';
+        console.log(`\n*** This is a Test Build. Your local database ${DB_NAME} get filled with documents. Whatever. ***\n`);
+}
 
 const getTitle = (markdown) => {
     let lines = markdown.split('\n');
@@ -70,7 +88,10 @@ const build = () => {
     let articles = [];
     let drafts = fs.readdirSync('article-drafts');
 
-    // build the html
+
+    // CREATE HTML
+    console.log('\n*** Build HTML and articles.js ***\n');
+
     drafts.forEach(title => {
         let filepath = `article-drafts/${title}`;
         let file = fs.readFileSync(filepath, 'utf8');
@@ -85,26 +106,33 @@ const build = () => {
         data.title = getTitle(markdown);
         data.subheadings = getSubheadings(markdown);
         data.url = path;
+        data.helped = 0;
         let articleHtml = markdownIt.render(markdown);
         let pageHtml = addBaseHtml(articleHtml, data);
         fs.writeFileSync(path, pageHtml);
+        console.log(`Build HTML for ${data.title}`);
         articles.push(data);
     });
     let articlesJS = `const articles = ${JSON.stringify(articles)}`;
     fs.writeFileSync('data/articles.js', articlesJS);
 
-    // build a record in the mongo db
+
+    // CREATE MONGO DOCUMENTS
+    console.log(`\n*** Build Documents in Mongo in DB ${DB_NAME} ***\n`);
+
     let promises = articles.map(article => {
         return db
         .collection('article')
         .findOne({publicid: article.publicid})
         .then((result) => {
             if (!result) {
-                return db.collection('article').insertOne(article);
+                return db.collection('article').insertOne(article).then((result) => {
+                    console.log('Created ', result.ops[0].title);
+                });
             } else {
                 return Promise.resolve();
             }
-        });
+        })
     });
 
     return Promise.all(promises);
@@ -112,8 +140,8 @@ const build = () => {
 
 // build();
 
-MONGODB_URI = 'mongodb://localhost:27017';
-DB_NAME = 'local-markschu-api';
+// start mongod locally with dpath envar
+// mongod --dbpath=/Users/markschumaker/data/db
 
 mongo
 .connect(MONGODB_URI, {
@@ -127,9 +155,9 @@ mongo
     return build();
 })
 .then(() => {
-    console.log('All done');
+    console.log('\n*** All done ***\n');
     process.exit(0);
 })
 .catch((error) => {
-    console.log(`Failed to connect to database. Error: ${error}`);
+    console.log(`Something bad happened... ${error}`);
 });

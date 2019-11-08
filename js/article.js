@@ -15,7 +15,7 @@ const put = (url, callback) => {
     request.send();
 }
 
-const get = (url) => {
+const get = (url, callback) => {
     const request = new XMLHttpRequest();
     request.open('GET', url);
     request.onload = () => {
@@ -24,11 +24,13 @@ const get = (url) => {
     request.send();
 }
 
-get(`${baseApiUrl}/article?articleId=${article.publicId}`);
+get(`${baseApiUrl}/article?publicid=${article.publicid}`, () => {
+    console.log('Got it!');
+});
 
 let thanksButton = document.querySelector('.thanks-button');
 thanksButton.addEventListener('click', () => {
-    put(`${baseApiUrl}/helped?articleId=${article.publicId}`, (status) => {
+    put(`${baseApiUrl}/article/helped?publicid=${article.publicid}`, (status) => {
         console.log(status);
     });
 });
