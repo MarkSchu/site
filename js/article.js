@@ -29,8 +29,11 @@ get(`${baseApiUrl}/article?publicid=${article.publicid}`, () => {
 });
 
 let thanksButton = document.querySelector('.thanks-button');
+let gladMessage = document.querySelector('.glad-message');
 thanksButton.addEventListener('click', () => {
+    thanksButton.disabled = true;
     put(`${baseApiUrl}/article/helped?publicid=${article.publicid}`, (status) => {
-        console.log(status);
+        thanksButton.style.display = 'none';
+        gladMessage.style.display = 'block';
     });
 });

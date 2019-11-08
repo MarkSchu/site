@@ -70,3 +70,9 @@ p {
     margin-top: 32px;
     cursor: pointer;
 }
+
+.article .glad-message {
+    margin-top: 32px;
+    font-weight: bold;
+    display: none;
+}

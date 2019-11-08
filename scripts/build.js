@@ -68,9 +68,10 @@ const addBaseHtml = (articleHtml, data) => {
                 <a href="/about.html">👋</a>
             </header>
             ${articleHtml}
+            <button class="thanks-button">🙌 Thanks, this helped!</button>
+            <p class="glad-message">👍 I'm glad it helped. Thanks for letting me know.</p>
         <div>
-                <button class="thanks-button">🙌 Thanks, this helped!</button>
-            </div>
+        <div>
             <footer>
                 <span>By Mark with ☕</span>
             </footer>
