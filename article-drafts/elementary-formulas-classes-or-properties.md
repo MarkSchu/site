@@ -9,11 +9,11 @@ publicid=4n442k9k4k2udjdh1
 
 Godel defines "elementary formula" like this.
 
-> If b is a term of the nth type and a is a term of the n + 1th type, then a(b) is an elementary formula.
+> If `b` is a term of the nth type and `a` is a term of the n + 1th type, then `a(b)` is an elementary formula.
 
 This is confusing.
 
-The notation looks like it means "b is a" or "b has the property a", but a few paragraphs earlier, Godel refers to terms of type greater than 1 as "classes". For example, terms of the second type are classes of numbers and terms of the third type are classes of classes of numbers. But a class is not a property.
+The notation looks like it means "`b` is `a`" or "`b` has the property `a`", but a few paragraphs earlier, Godel refers to terms of type greater than 1 as "classes". For example, terms of the second type are classes of numbers and terms of the third type are classes of classes of numbers. But a class is not a property.
 
 The notation, therefore, treats a like a property while Godel calls it a class.
 
