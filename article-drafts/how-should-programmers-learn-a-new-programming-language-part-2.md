@@ -4,7 +4,7 @@ publicid=4n442kc8ek2uopihh
 ---
 # How Should Programmers Learn a New Programming Language?
 ## Part 2: What is a program and how do you run one?
-## Thoughts on Programming
+## Thoughts on Code
 
 (This is part 2 of 4. The intro is [here](/articles/how-should-programmers-learn-a-new-programming-language-part-1.html).
 

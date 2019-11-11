@@ -4,7 +4,7 @@ publicid=3vjlaysyk2p3mz9x
 ---
 # How Should Programmers Learn a New Programming Language?
 ## Part 1: Intro
-## Thoughts on Programming
+## Thoughts on Code
 
 When you already know how to program and you want to learn a new programming language, how should you start?
 
@@ -45,4 +45,4 @@ When you write a program in JavaScript, for example, the medium sized objects ar
 
 **What are the tools that should be on your radar?**
 
-Another difference between Java and JavaScript. You'll find people programming JavaScript on many different text editors, some of which are very simple like Sublime and Atom. On the other hand, you often find Java programmers using text editors like IntelliJ and Visual Studio that are much for complex and have intimate connections with Java. Many of those connections are so intimate that it becomes difficult to code without the editor (or at least, code productively). At some point, it behooves you to learn the editor in order to use the language. 
+Another difference between Java and JavaScript. You'll find people programming JavaScript on many different text editors, some of which are very simple like Sublime and Atom. On the other hand, you often find Java programmers using text editors like IntelliJ and Visual Studio that are much for complex and have intimate connections with Java. Many of those connections are so intimate that it becomes difficult to code without the editor (or at least, code productively). At some point, it behooves you to learn the editor in order to use the language.
