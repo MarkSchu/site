@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148614000-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-148614000-1');
+    </script>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>How Should Programmers Learn a New Programming Language?</h1>
+<h2>Part 2: What is a program and how do you run one?</h2>
+<h2>Thoughts on Programming</h2>
+<p>(This is part 2 of 4. The intro is <a href="/articles/how-should-programmers-learn-a-new-programming-language-part-1.html">here</a>.</p>
+<p>In Part 1, I said that I think that the most important questions that a developer can ask when learning a new programming are:</p>
+<ol>
+<li>What is a program and how do you run one?</li>
+<li>What are the medium sized building blocks that you build programs with?</li>
+<li>What are the tools that should be on your radar?</li>
+</ol>
+<p>In this article, I'm going to elaborate on 1: What is a program and how do you run one?</p>
+<p>This is the most important question that a programmer has to answer. At bottom, you use programs by running them; so you have to know what a program looks like and how to run it. This looks very different for different languages and for the contexts in which those languages are used.</p>
+<p>For example, in web development world, websites use programs written in JavaScript. A JavaScript program is a list of instructions with no special entry point. The following, for example, is a perfectly valid JavaScript Program:</p>
+<pre><code class="language-javascript">console.log('hello!');
+var foo = 42;
+console.log(42 * 4);
+</code></pre>
+<p>In order to run it on the web, you have to send it to a web browser. Browsers read and execute JavaScript because they're JavaScript interpreters. And you tell a web browser to interpret and execute a JavaScript program by sending it a <code>.js</code> file(or by including the code in a special HTML tag).</p>
+<p>For example, when you include the tag</p>
+<pre><code class="language-html">&lt;script src=&quot;https://www.mysite.com/imaprogram.js&quot; &gt;&lt;/script&gt;
+</code></pre>
+<p>the browser will request <code>imaprogram.js</code> via HTTP, get the file, and run it.</p>
+<p>A slightly more complicated example is TypeScript. TypeScript is a programming language that compiles into JavaScript. A TypeScript program is, like JavaScript, a file with a list of instructions and no special entry point, but it's compiled into JavaScript before being sent to the browser.</p>
+<p>What about NodeJS? NodeJS is JavaScript that runs on a computer instead of a browser. A NodeJS program is just like a JavaScript-in-the-browser program but you run from the terminal. Go to the directory that includes the file - call it <code>imaprogram.js</code> - and run it using the command <code>node imaprogram.js</code></p>
+<p>A very different example is Java. You don't just write Java in a file and run it with a single command on the command line. Java programs are classes with a special method called main. The method main is the program's entry point.</p>
+<pre><code class="language-java">class ImAJavaProgram {
+	public static void main(String [] args) {
+    	// do stuff
+    }
+}
+</code></pre>
+<p>This is way more structured than JavaScript. A JavaScript program is a list of whatever instructions you want. A Java program is a class; and it's a class that satisfies a particular interface. Moreover, Java is compiled.</p>
+<p>There are other contexts that you have to be aware of as well.</p>
+<p>For example, you need to know how to run a program locally for development versus how to run it in production. In order to run a website locally, for example, you run a web server on your computer that serves the code to localhost. Alternatively, in order to run your website on the actual web, you probably deploy it to some hosting service.</p>
+<p>That's all to say, programs do not look the same from language to language and even differ based on the context in which you use the language. In order to learn a programming language, you need to know how to run a program; that is, you need to know how to press the start button.</p>
+
+            <button class="thanks-button">🙌 Thanks, this helped!</button>
+            <p class="glad-message">👍 I'm glad it helped. Thanks for letting me know.</p>
+        <div>
+        <div>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let article = {"publish":"true","date":"11/11/2019","publicid":"4n442kc8ek2uopihh","title":"How Should Programmers Learn a New Programming Language?","subheadings":["Part 2: What is a program and how do you run one?","Thoughts on Programming"],"url":"articles/how-should-programmers-learn-a-new-programming-language-part-2.html","helped":0};
+    </script>
+    <script src="/js/article.js"></script>
+</body>
+</html>
