@@ -2,7 +2,6 @@ publish=true
 date=11/11/2019
 publicid=4n442k9k4k2udjdh1
 ---
-
 # Elementary Formulas: Classes or Properties?
 ## A Confusion
 ## Reading "On Formally Undecidable Propositions of Principia Mathematica and Related Systems" by Kurt Godel, Part 6
