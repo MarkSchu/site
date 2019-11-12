@@ -2,7 +2,6 @@ date=11/11/2019
 publish=true
 publicid=4n442kd3zk2urospq
 ---
-
 # A Tiny Solution to the Frontend State Problem
 ## Thoughts on Code
 
