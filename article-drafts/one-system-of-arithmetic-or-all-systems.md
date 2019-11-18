@@ -2,7 +2,6 @@ publish=true
 date=11/18/2019
 publicid=13hk5169k34p8spb
 ---
-
 # One System of Arithmetic or All Systems?
 ## Notes on Godel's Incompleteness Theorem
 
