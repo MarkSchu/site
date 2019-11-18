@@ -12,4 +12,6 @@ Some explanations of the Incompleteness Theorem, however, says that the theorem 
 
 I'm not sure how to square this; how does the undecidability of P show the undecidability of *every* other arithmetic system?
 
+<img src="../images/arithmetic.png" />
+
 I'm sure Godel mentions something in the article, but here's a guess. The undecidability of P does not explicitly demonstrate the undecidability of every arithmetic system. *But*, the methods of proof are clear enough to apply to other systems. And that's enough to have confidence in the undecidability of all systems.
