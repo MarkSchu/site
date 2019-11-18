@@ -7,7 +7,7 @@ publicid=13hk5169k34p8spb
 
 In his Incompleteness Theorem, Kurt Godel proves that a particular system of arithmetic called P is undecidable.
 
-Some explanations of the Incompleteness Theorem, however, says that the theorem shows that all systems of arithmetic are undecidable. For example, the Wikipedia article on it says the theorem shows "...the inherent limitations of every formal axiomatic system capable of modeling basic arithmetic."
+Some explanations of the Incompleteness Theorem, however, say that the theorem shows that all systems of arithmetic are undecidable. For example, the Wikipedia article on it says the theorem shows "...the inherent limitations of every formal axiomatic system capable of modeling basic arithmetic."
 
 I'm not sure how to square this; how does the undecidability of P show the undecidability of *every* other arithmetic system?
 
