@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148614000-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-148614000-1');
+    </script>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>The Encoding</h1>
+<h2>Notes on Godel's Incompleteness Theorem</h2>
+<p>An important part of Godel's Incompleteness Theorem is a mapping from the set of formulas in the system P to the set of numbers so that every formula is uniquely encoded as a number. For example, the formula SS0 is mapped to 331.</p>
+<p>In general, the mapping looks like this:</p>
+<img src="../images/godelmap1.png" />
+<p>Here's a specific outline of the steps.</p>
+<p>First, primitive symbols are mapped to numbers.</p>
+<img src="../images/godelmap2.png" />
+<p>I'm going to call this symbolNumber so that, for example, symbolNumber(v) = 7 and symbolNumber(S) = 3.</p>
+<p>Second, the formulas of P, like SS0, are mapped to sequences of numbers using symbolNumber. A formula is a sequence of primitive symbols so we just replace each primitive symbol with the number it is mapped to and we automatically end up with a sequence of numbers. I'll call this mapping formulaNumber. For example,</p>
+<pre><code>formulaNumber(SS0)
+= symbolNumber(S)symbolNumber(S)symbolNumber(0)
+= symbolNumber(S)symbolNumber(S)1
+= symbolNumber(S)31
+= 331
+</code></pre>
+<p>Finally, sequences of numbers are mapped to numbers. I'll call this mapping numberSequenceNumber. It is defined like this:</p>
+<pre><code>numberSequenceNumber(ab...c) = 2^a * 3^b * .... * p^c
+</code></pre>
+<p>For example,</p>
+<pre><code>numberListToNumber(331)
+= 2^3 * 3^3 * 5^1
+= 2^3 * 27 * 5
+= 2^3 * 27 * 5
+= 8 * 27 * 5
+= 1080
+</code></pre>
+<p>When you combine all the mappings together, you get a mapping from the formulas to the numbers.</p>
+
+            <button class="thanks-button">🙌 Thanks, this helped!</button>
+            <p class="glad-message">👍 I'm glad it helped. Thanks for letting me know.</p>
+        <div>
+        <div>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let article = {"publish":"true","date":"11/20/2019","publicid":"13hk568jk37ahdaf","title":"The Encoding","subheadings":["Notes on Godel's Incompleteness Theorem"],"url":"articles/the-encoding.html","helped":0};
+    </script>
+    <script src="/js/article.js"></script>
+</body>
+</html>
