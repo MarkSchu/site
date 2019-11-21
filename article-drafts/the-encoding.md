@@ -2,7 +2,6 @@ publish=true
 date=11/20/2019
 publicid=13hk568jk37ahdaf
 ---
-
 # The Encoding
 ## Notes on Godel's Incompleteness Theorem
 

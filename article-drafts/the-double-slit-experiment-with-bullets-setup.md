@@ -2,7 +2,6 @@ publish=true
 date=11/21/2019
 publicid=13hk5cgek38qjyme
 ---
-
 # The Double Slit Experiment with Bullets: The Setup
 ## Quantum Mechanics from Zero
 
