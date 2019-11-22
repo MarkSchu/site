@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148614000-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-148614000-1');
+    </script>
+    <meta charset="utf-8">
+    <title>Mark Schumaker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../style.css">
+    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+    <script src="../prismjs/prism.js"></script>
+</head>
+<body>
+    <div class="container article">
+        <div class="content">
+            <header>
+                <a href="/">🌮</a>
+                <a href="/writing.html">📝</a>
+                <a href="/about.html">👋</a>
+            </header>
+            <h1>Thinking Through the Definition of Recursive Function</h1>
+<h2>Notes on Godel's Incompleteness Theorem</h2>
+<p>Start with the functions:</p>
+<img src="../images/recursive1.png" />
+<p>Note that B has one less argument than A and that C has one more argument than A. For example, if A has two arguments, then A, B, and C look like:</p>
+<img src="../images/recursive2.png" />
+<p>If A has one argument, then B is just a number - a constant - and A, B, and C look like.</p>
+<img src="../images/recursive3.png" />
+<p>Now for the definition.</p>
+<p>The function A is <strong>recursively defined from the functions</strong> B and C when the following holds.</p>
+<p>Given numbers n and x...y:</p>
+<img src="../images/recursive4.png" />
+<p>There's a lot going on here. For clarity, here is A with two arguments.</p>
+<img src="../images/recursive5.png" />
+<p>And here it is with one argument. B, in this instance, isn't a function. It is a number like 12 or 101.</p>
+<img src="../images/recursive6.png" />
+
+            <button class="thanks-button">🙌 Thanks, this helped!</button>
+            <p class="glad-message">👍 I'm glad it helped. Thanks for letting me know.</p>
+        <div>
+        <div>
+            <footer>
+                <span>By Mark with ☕</span>
+            </footer>
+        </div>
+    </div>
+    <script>
+        let article = {"publish":"true","date":"11/22/2019","publicid":"13hk5ev4k3a5cygl","title":"Thinking Through the Definition of Recursive Function","subheadings":["Notes on Godel's Incompleteness Theorem"],"url":"articles/thinking-through-the-definition-of-recursive-function-1.html","helped":0};
+    </script>
+    <script src="/js/article.js"></script>
+</body>
+</html>
