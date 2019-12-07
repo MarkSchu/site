@@ -1,11 +1,11 @@
-body {
+/* body {
     margin: 0;
     font-family: "Courier New";
-}
+} */
 
-.container {
+/* .container {
     padding: 60px;
-}
+} */
 
 @media (max-width: 621px) {
     .container {
@@ -21,11 +21,11 @@ header a {
     text-decoration: none;
 }
 
-footer {
+/* footer {
     margin-top: 60px;
     text-align: center;
     font-size: 18px;
-}
+} */
 
 .content {
     max-width: 600px;

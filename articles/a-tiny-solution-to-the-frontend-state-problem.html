@@ -1,31 +1,30 @@
-
 <!DOCTYPE html>
-<html>
-<head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148614000-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-148614000-1');
-    </script>
-    <meta charset="utf-8">
-    <title>Mark Schumaker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../style.css">
-    <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
-    <script src="../prismjs/prism.js"></script>
-</head>
-<body>
-    <div class="container article">
-        <div class="content">
-            <header>
-                <a href="/">🌮</a>
-                <a href="/writing.html">📝</a>
-                <a href="/about.html">👋</a>
-            </header>
-            <h1>A Tiny Solution to the Frontend State Problem</h1>
+        <html>
+        <head>
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148614000-1"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-148614000-1');
+            </script>
+            <meta charset="utf-8">
+            <title>Mark Schumaker</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="../style.css">
+            <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
+            <script src="../prismjs/prism.js"></script>
+        </head>
+        <body>
+            <div class="container article">
+                <div class="content">
+                    <header>
+                        <a href="/">🌮</a>
+                        <a href="/writing.html">📝</a>
+                        <a href="/about.html">👋</a>
+                    </header>
+                    <h1>A Tiny Solution to the Frontend State Problem</h1>
 <h2>Thoughts on Code</h2>
 <p>One of the problems that web frameworks like React try to
 solve is the problem of updating the DOM on changes of state.</p>
@@ -75,18 +74,16 @@ above creates a <code>div</code> with class name <code>foo</code> and with a <co
 <p>The element listens for changes in state via the <code>observe</code> and <code>whenfoo</code> attributes. When a change in <code>foo</code> occurs, <code>el</code> refers to the span.</p>
 <p>I like this solution for a few different reasons. First, it feels like you're coding with VanillaJS because the DOM elements aren't wrapped by a framework specific class like React's <code>Component</code>. Second, it's small. The implementation of the solution is barely a few a hundred lines of code and the API is easy to get familiar with. Third, DOM elements treat state changes like they treat user events and that makes it easy to reason about.</p>
 
-            <button class="thanks-button">🙌 Thanks, this helped!</button>
-            <p class="glad-message">👍 I'm glad it helped. Thanks for letting me know.</p>
-        <div>
-        <div>
-            <footer>
-                <span>By Mark with ☕</span>
-            </footer>
-        </div>
-    </div>
-    <script>
-        let article = {"date":"11/11/2019","publish":"true","publicid":"4n442kd3zk2urospq","title":"A Tiny Solution to the Frontend State Problem","subheadings":["Thoughts on Code"],"url":"articles/a-tiny-solution-to-the-frontend-state-problem.html","helped":0};
-    </script>
-    <script src="/js/article.js"></script>
-</body>
-</html>
+                <div>
+                <div>
+                    <footer>
+                        <span>By Mark with ☕</span>
+                    </footer>
+                </div>
+            </div>
+            <script>
+                let article = {"title":"A Tiny Solution to the Frontend State Problem","publish":"true","publicid":"4n442kd3zk2urospq","date":"11/11/2019","url":"articles/a-tiny-solution-to-the-frontend-state-problem.html","subheadings":["Thoughts on Code"]};
+            </script>
+            <script src="/js/article.js"></script>
+        </body>
+        </html>

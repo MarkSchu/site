@@ -1,0 +1,8 @@
+.latest {
+    display: flex;
+    justify-content: space-between;
+}
+
+h2 {
+    margin-top: 32px;
+}

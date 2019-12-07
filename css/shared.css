@@ -1,0 +1,35 @@
+* {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+body {
+    margin: 0;
+    font-family: "Courier New";
+}
+
+header {
+    margin-bottom: 60px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.container {
+    padding: 60px;
+}
+
+.content {
+    max-width: 600px;
+    margin: auto;
+}
+
+footer {
+    margin-top: 64px;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}

@@ -12,73 +12,31 @@
     <meta charset="utf-8">
     <title>Mark Schumaker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/writing.css">
 </head>
 <body>
     <div class="container writing">
         <div class="content">
+
             <header>
                 <a href="/">🌮</a>
-                <a href="/code.html">💾</a>
-                <a href="/writing.html">📝</a>
                 <a href="/about.html">👋</a>
+                <a href="/writing.html">📝</a>
+                <a href="">⚛️</a>
+                <a href="/code.html">💾</a>
             </header>
-            <p>Here is some of my writing! Most of it is my attempt to learn in public.
-            I really get a kick out of code, computer science, physics, and philosophy.</p>
-            <p>Learning is hard. I hope these help.</p>
-            <p>---</p>
-            <div id="list">
-            </div>
+
+            <h2>Articles 📝</h2>
+            <br>
+            <div id="tags"></div>
+            <div id="list"></div>
             <footer>
                 <span>By Mark with ☕</span>
             </footer>
         </div>
     </div>
-    <script src="data/articles.js" ></script>
-    <script>
-
-        articles.sort((a, b) => {
-            return new Date(b.date) - new Date(a.date);
-        });
-
-        let addArticle = (article) => {
-            let list = document.querySelector('#list');
-            let articleEl = document.createElement('p');
-
-            // title
-            let title = document.createElement('div');
-            let anchor = document.createElement('a');
-            // anchor.style.fontWeight = 'bold';
-            anchor.textContent = article.title;
-            anchor.href = article.url;
-            title.appendChild(anchor);
-            articleEl.appendChild(anchor);
-
-            // subheadings
-            article.subheadings.forEach((subheading) => {
-                let subheadingEl = document.createElement('div');
-                subheadingEl.textContent = subheading;
-                articleEl.appendChild(subheadingEl);
-            });
-
-            // summary
-            if (article.summary) {
-                let summaryEl = document.createElement('div');
-                summaryEl.textContent = article.summary;
-                articleEl.appendChild(summaryEl);
-            }
-
-            // date
-            let date = document.createElement('div');
-            date.textContent = article.date;
-            articleEl.appendChild(date);
-
-            // article
-            list.appendChild(articleEl);
-        }
-
-        articles.forEach(addArticle);
-
-    </script>
+    <script src="articles.js" ></script>
+    <script src="js/writing.js" ></script>
 </body>
 </html>
