@@ -1,6 +1,7 @@
 publish=true
 date=10/29/2019
 publicid=3vjlaxssk2o4ert5
+tags=physics
 ---
 # A Restatement of Newton's Third Law that You Can Use
 

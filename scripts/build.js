@@ -25,6 +25,14 @@ const getSubheadings = (markdown) => {
     return subheadings;
 }
 
+const getTags = (metadataObj) => {
+    if (metadataObj.tags) {
+        return metadataObj.tags.split(',')
+    } else {
+        return [];
+    }
+}
+
 const build = () => {
     console.log('Build');
     let articles = [];
@@ -48,7 +56,8 @@ const build = () => {
             publicid: metadataObj.publicid,
             date: metadataObj.date,
             url: articlePath,
-            subheadings: getSubheadings(markdown)
+            subheadings: getSubheadings(markdown),
+            tags: getTags(metadataObj)
         }
         html = wrapInBaseHTML(html, data);
         fs.writeFileSync(articlePath, html);

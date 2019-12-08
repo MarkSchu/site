@@ -1,6 +1,7 @@
 publish=true
 date=11/11/2019
 publicid=4n442kc8ek2uopihh
+tags=code
 ---
 # How Should Programmers Learn a New Programming Language?
 ## Part 2: What is a program and how do you run one?

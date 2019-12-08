@@ -1,6 +1,7 @@
 publish=true
 date=11/7/2019
 publicid=3vjlaysyk2p3mz9x
+tags=code
 ---
 # How Should Programmers Learn a New Programming Language?
 ## Part 1: Intro

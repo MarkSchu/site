@@ -1,6 +1,7 @@
 publish=true
 date=11/11/2019
 publicid=4n442k9k4k2udjdh1
+tags=logic
 ---
 # Elementary Formulas: Classes or Properties?
 ## A Confusion

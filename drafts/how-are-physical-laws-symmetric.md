@@ -1,6 +1,7 @@
 publish=true
 date=11/4/2019
 publicid=3vjlaxssk2o4eru2
+tags=physics
 ---
 # How Are Physical Laws Symmetric?
 ## Reading "The Feynman Lectures on Physics"

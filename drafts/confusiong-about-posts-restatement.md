@@ -1,6 +1,7 @@
 publish=true
 date=10/18/2019
 publicid=3vjlaxssk2o4ertt
+tags=computerscience
 ---
 # Confusion About Post's Restatement
 ## Reading "Recursive Unsolvability of a Problem of Thue" by Emil Post in "The Undecidable" Anthology

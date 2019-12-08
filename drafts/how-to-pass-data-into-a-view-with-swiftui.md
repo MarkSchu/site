@@ -1,6 +1,7 @@
 publish=true
 date=11/11/2019
 publicid=6gyh4ik3opz73e
+tags=code, swiftui
 ---
 
 # How to Pass Data into a View in SwiftUI

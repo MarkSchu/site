@@ -1,6 +1,7 @@
 date=10/27/2019
 publish=true
 publicid=3vjlaxssk2o4erss
+tags=physics, feynmanlectures
 ---
 # A Few Thought Experiments
 ## Reading "The Feynman Lectures on Physics", Volume 1, Chapter 10, Section 2
