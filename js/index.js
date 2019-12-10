@@ -1,15 +1,52 @@
-articles.sort((a, b) => {
+const addBlogArticle = (i) => {
+    let articlesDiv = document.querySelector('#blog-articles');
+    let articleEl = (
+        createElement('p', {},
+            // createElement('span', {textContent: ' * '}),
+            createElement('a', {
+                textContent: blogArticles[i].title,
+                href: '/' + blogArticles[i].url
+            }),
+            createElement('br', {}),
+            createElement('span', {
+                textContent: i === 0 ? ' 💥 New' : ' ⚡ Recent'
+            })
+        )
+    );
+    articlesDiv.appendChild(articleEl);
+}
+
+const addQmFromZeroArticle = (i) => {
+    let articlesDiv = document.querySelector('#qm-from-zero-articles');
+    let articleEl = (
+        createElement('p', {},
+            // createElement('span', {textContent: ' * '}),
+            createElement('a', {
+                textContent: qmFromZeroArticles[i].title,
+                href: '/quantum-mechanics-from-zero/' + qmFromZeroArticles[i].url
+            }),
+            createElement('br', {}),
+            createElement('span', {
+                textContent: i === 0 ? ' 💥 New' : ' ⚡ Recent'
+            })
+        )
+    );
+    articlesDiv.appendChild(articleEl);
+}
+
+// sort articles
+blogArticles.sort((a, b) => {
     return new Date(b.date) - new Date(a.date);
 });
 
-// Show latest blog article
-let latest = blogArticles[0];
-let link = document.querySelector('#latest-blog-link');
-link.href = latest.url;
-link.textContent = latest.title;
 
-// Show latest qm from zero article
-let qmlatest = articles[0];
-let qmlink = document.querySelector('#latest-qm-link');
-qmlink.href = qmlatest.url;
-qmlink.textContent = qmlatest.title;
+// sort articles
+qmFromZeroArticles.sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+});
+
+// Add three latest blog articles
+for (let i=0; i<3; i++) {
+    addBlogArticle(i);
+    addQmFromZeroArticle(i);
+}
