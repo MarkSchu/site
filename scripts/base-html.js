@@ -14,18 +14,21 @@ const wrapInBaseHTML = (html, data) => {
             <meta charset="utf-8">
             <title>Mark Schumaker</title>
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" href="../style.css">
+            <link rel="stylesheet" href="../css/shared.css">
+            <link rel="stylesheet" href="../css/article.css">
             <link href="../prismjs/themes/prism-okaidia.css" rel="stylesheet" />
             <script src="../prismjs/prism.js"></script>
         </head>
         <body>
             <div class="container article">
                 <div class="content">
-                    <header>
-                        <a href="/">🌮</a>
-                        <a href="/writing.html">📝</a>
-                        <a href="/about.html">👋</a>
-                    </header>
+                <header>
+                    <a href="/">🌮</a>
+                    <a href="/about.html">👋</a>
+                    <a href="/writing.html">📝</a>
+                    <a href="/quantum-mechanics-from-zero">⚛️</a>
+                    <a href="/code.html">💾</a>
+                </header>
                     ${html}
                 <div>
                 <div>
@@ -37,7 +40,6 @@ const wrapInBaseHTML = (html, data) => {
             <script>
                 let article = ${JSON.stringify(data)};
             </script>
-            <script src="/js/article.js"></script>
         </body>
         </html>`
     );
