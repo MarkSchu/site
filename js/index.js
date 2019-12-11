@@ -41,7 +41,7 @@ blogArticles.sort((a, b) => {
 
 // sort articles
 qmFromZeroArticles.sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
+    return new Date(b.position) - new Date(a.position);
 });
 
 // Add three latest blog articles
