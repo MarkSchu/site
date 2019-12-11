@@ -7,7 +7,7 @@ const tags = {
 const selectedTags = new Set();
 
 const sortArticles = () => {
-    blogArticles.sort((a, b) => { return new Date(b.date) - new Date(a.date); });
+    blogArticles.sort((a, b) => { return new Date(a.date) - new Date(b.date); });
 }
 
 const addArticle = (article) => {
