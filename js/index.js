@@ -36,7 +36,7 @@ const addQmFromZeroArticle = (i) => {
 
 // sort articles
 blogArticles.sort((a, b) => {
-    return new Date(a.date) - new Date(b.date);
+    return new Date(b.date) - new Date(a.date);
 });
 
 // sort articles
