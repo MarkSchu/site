@@ -96,4 +96,4 @@ const displayTags = () => {
 // INIT
 sortArticles();
 displayArticles();
-displayTags();
+// displayTags();
