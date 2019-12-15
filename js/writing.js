@@ -10,9 +10,18 @@ const sortArticles = () => {
     blogArticles.sort((a, b) => { return new Date(b.date) - new Date(a.date); });
 }
 
+const getDate = (articleDate) => {
+    var date = new Date(articleDate);
+    var d = date.getDate();
+    var m = date.getMonth() + 1;
+    var yyyy = date.getFullYear();
+    return `${m}/${d}/${yyyy}`;
+}
+
+
 const addArticle = (article) => {
 
-    let list = document.querySelector('#list');
+    let list = document.querySelector('#articles');
     let articleEl = document.createElement('p');
 
     // title
@@ -40,7 +49,7 @@ const addArticle = (article) => {
 
     // date
     let date = document.createElement('div');
-    date.textContent = article.date;
+    date.textContent = getDate(article.date);
     articleEl.appendChild(date);
 
     // article
@@ -48,7 +57,7 @@ const addArticle = (article) => {
 }
 
 const displayArticles = () => {
-    document.querySelector('#list').innerHTML = '';
+    document.querySelector('#articles').innerHTML = '';
     if (selectedTags.size === 0) {
         blogArticles.forEach(addArticle);
     } else {
@@ -89,7 +98,7 @@ const addTag = (tag, tagData) => {
 
 const displayTags = () => {
     for (var tag in tags) {
-        addTag(tag, tags[tag]);
+        // addTag(tag, tags[tag]);
     }
 }
 
